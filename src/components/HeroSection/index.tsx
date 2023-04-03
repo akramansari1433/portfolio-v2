@@ -11,9 +11,9 @@ export default function Example() {
                     className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white dark:bg-black  shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:-mr-80 lg:-mr-96"
                     aria-hidden="true"
                 />
-                <div className="h-screen px-6 py-40 sm:py-40 lg:px-8">
-                    <div className="flex flex-wrap items-center justify-center gap-10">
-                        <div className="md:w-1/2">
+                <div className="h-screen flex justify-center py-20 px-10">
+                    <div className="flex flex-wrap justify-center gap-10 items-center">
+                        <div className="mx-auto max-w-lg">
                             <h1 className="text-5xl font-semibold">
                                 Hello there!
                             </h1>
@@ -40,13 +40,14 @@ export default function Example() {
                                 </a>
                             </div>
                         </div>
-                        <div>
+                        <div className="p-3 border border-red-500 rounded-xl">
                             <Image
                                 src="/images/profile.jpg"
                                 alt=""
                                 className="rounded-xl"
                                 width={400}
                                 height={400}
+                                priority
                             />
                         </div>
                     </div>
