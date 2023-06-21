@@ -1,18 +1,16 @@
 import Image from "next/image";
-import Navbar from "../Navbar";
-import { useTheme } from "next-themes";
+import Link from "next/link";
 
 export default function Example() {
-    const { theme } = useTheme();
     return (
         <div className="bg-white dark:bg-black">
-            <div className="relative isolate overflow-hidden bg-gradient-to-b from-indigo-200/20">
+            <div className="relative isolate overflow-hidden bg-gradient-to-b from-gray-200/20">
                 <div
-                    className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white dark:bg-black  shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:-mr-80 lg:-mr-96"
+                    className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl  shadow-gray-600/10 ring-1 ring-indigo-50 dark:bg-black sm:-mr-80 lg:-mr-96"
                     aria-hidden="true"
                 />
-                <div className="h-screen flex justify-center py-20 px-10">
-                    <div className="flex flex-wrap justify-center gap-10 items-center">
+                <div className="flex h-[calc(100vh-5rem)] items-center justify-center p-10">
+                    <div className="flex flex-wrap items-center justify-center gap-10">
                         <div className="mx-auto max-w-lg">
                             <h1 className="text-5xl font-semibold">
                                 Hello there!
@@ -26,21 +24,21 @@ export default function Example() {
                                 commodo.
                             </p>
                             <div className="mt-10 flex items-center gap-x-6">
-                                <a
+                                <Link
                                     href="#"
-                                    className="rounded-md bg-black dark:bg-red-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                    className="rounded-md border-2 border-white bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:border-black hover:bg-white hover:text-black"
                                 >
-                                    Get started
-                                </a>
-                                <a
+                                    About
+                                </Link>
+                                <Link
                                     href="#"
-                                    className="text-sm font-semibold leading-6"
+                                    className="px-3.5 py-2.5 text-sm font-semibold leading-6"
                                 >
-                                    Learn more <span aria-hidden="true">→</span>
-                                </a>
+                                    My Work <span aria-hidden="true">→</span>
+                                </Link>
                             </div>
                         </div>
-                        <div className="p-3 border border-red-500 rounded-xl">
+                        <div className="rounded-xl border border-black p-3">
                             <Image
                                 src="/images/profile.jpg"
                                 alt=""
