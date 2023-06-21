@@ -26,15 +26,15 @@ export default function Navbar() {
     return (
         <header className="sticky top-0 z-50 dark:bg-black">
             <nav
-                className="flex items-center justify-between p-6 lg:px-8 font-mono"
+                className="flex items-center justify-between p-6 font-mono lg:px-8"
                 aria-label="Global"
             >
-                <div className="">
-                    <div className="w-10 h-10 flex justify-center items-center text-lg font-sans bg-black rounded-[50%] p-2 text-white">
+                <Link href={"/"}>
+                    <div className="flex h-10 w-10 items-center justify-center rounded-[50%] bg-black p-2 font-sans text-lg text-white">
                         AA
                     </div>
-                </div>
-                <div className="w-full flex justify-end md:hidden">
+                </Link>
+                <div className="flex w-full justify-end md:hidden">
                     <button
                         type="button"
                         className="-m-2.5 rounded-md p-2.5"
@@ -54,7 +54,7 @@ export default function Navbar() {
                                     isActive
                                         ? "border-black"
                                         : "border-transparent"
-                                } text-lg font-semibold border-b-2  hover:border-black`}
+                                } border-b-2 px-2 py-1 text-lg font-semibold  hover:border-black`}
                             >
                                 {item.name}
                             </Link>
@@ -63,7 +63,7 @@ export default function Navbar() {
                 </div>
                 <div className="hidden md:flex">
                     <button
-                        className="border p-2 rounded-full"
+                        className="rounded-full border p-2"
                         onClick={() =>
                             theme === "light"
                                 ? setTheme("dark")
@@ -85,10 +85,10 @@ export default function Navbar() {
                 onClose={setMobileMenuOpen}
             >
                 <div className="fixed inset-0 z-50" />
-                <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-100 dark:bg-gray-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-100 p-6 dark:bg-gray-900 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex justify-end gap-3">
                         <button
-                            className="border p-1 rounded-full"
+                            className="rounded-full border p-1"
                             onClick={() =>
                                 theme === "light"
                                     ? setTheme("dark")
