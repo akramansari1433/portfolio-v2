@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
-import { Dialog } from "@headlessui/react";
 import {
     Bars3Icon,
     MoonIcon,
@@ -10,6 +9,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const navigation = [
     { name: "Home", href: "/" },
@@ -61,7 +61,7 @@ export default function Navbar() {
                         );
                     })}
                 </div>
-                <div className="hidden md:flex">
+                {/* <div className="hidden md:flex">
                     <button
                         className="rounded-full border p-2"
                         onClick={() =>
@@ -76,18 +76,12 @@ export default function Navbar() {
                             <SunIcon className="h-5 w-5" />
                         )}
                     </button>
-                </div>
+                </div> */}
             </nav>
-            <Dialog
-                as="div"
-                className="md:hidden"
-                open={mobileMenuOpen}
-                onClose={setMobileMenuOpen}
-            >
-                <div className="fixed inset-0 z-50" />
-                <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-100 p-6 dark:bg-gray-900 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-                    <div className="flex justify-end gap-3">
-                        <button
+            {mobileMenuOpen && (
+                <div className="fixed inset-0 bg-white p-6 font-mono md:hidden">
+                    <div className="flex items-center justify-end gap-3">
+                        {/* <button
                             className="rounded-full border p-1"
                             onClick={() =>
                                 theme === "light"
@@ -100,7 +94,7 @@ export default function Navbar() {
                             ) : (
                                 <SunIcon className="h-6 w-6" />
                             )}
-                        </button>
+                        </button> */}
                         <button
                             type="button"
                             className="-m-2.5 rounded-md p-2.5"
@@ -109,15 +103,30 @@ export default function Navbar() {
                             <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                         </button>
                     </div>
-                    <div className="mt-6 flow-root">
-                        <div className="-my-6 divide-y divide-gray-500/10">
-                            <div className="space-y-2 py-6">
-                                {navigation.map((item) => {
-                                    const isActive = pathname === item.href;
-                                    return (
+                    <div className="mt-6">
+                        <motion.div
+                            className="space-y-1"
+                            initial={{ opacity: 0, y: 200 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            {navigation.map((item, index) => {
+                                const isActive = pathname === item.href;
+                                return (
+                                    <motion.div
+                                        key={item.name}
+                                        initial={{ opacity: 0, y: 200 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{
+                                            duration: 0.5,
+                                            delay: index * 0.1,
+                                        }}
+                                    >
                                         <Link
-                                            key={item.name}
                                             href={item.href}
+                                            onClick={() =>
+                                                setMobileMenuOpen(false)
+                                            }
                                             className={`${
                                                 isActive
                                                     ? "bg-black text-white"
@@ -126,13 +135,13 @@ export default function Navbar() {
                                         >
                                             {item.name}
                                         </Link>
-                                    );
-                                })}
-                            </div>
-                        </div>
+                                    </motion.div>
+                                );
+                            })}
+                        </motion.div>
                     </div>
-                </Dialog.Panel>
-            </Dialog>
+                </div>
+            )}
         </header>
     );
 }
