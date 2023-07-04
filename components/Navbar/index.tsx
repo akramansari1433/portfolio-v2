@@ -30,7 +30,7 @@ export default function Navbar() {
                 aria-label="Global"
             >
                 <Link href={"/"}>
-                    <div className="flex h-10 w-10 items-center justify-center rounded-[50%] bg-black p-2 font-sans text-lg text-white">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-[50%] bg-black dark:bg-white p-2 font-sans text-lg text-white dark:text-black">
                         AA
                     </div>
                 </Link>
@@ -61,7 +61,7 @@ export default function Navbar() {
                         );
                     })}
                 </div>
-                {/* <div className="hidden md:flex">
+                <div className="hidden md:flex">
                     <button
                         className="rounded-full border p-2"
                         onClick={() =>
@@ -76,12 +76,12 @@ export default function Navbar() {
                             <SunIcon className="h-5 w-5" />
                         )}
                     </button>
-                </div> */}
+                </div>
             </nav>
             {mobileMenuOpen && (
                 <div className="fixed inset-0 bg-white p-6 font-mono md:hidden">
                     <div className="flex items-center justify-end gap-3">
-                        {/* <button
+                        <button
                             className="rounded-full border p-1"
                             onClick={() =>
                                 theme === "light"
@@ -94,7 +94,7 @@ export default function Navbar() {
                             ) : (
                                 <SunIcon className="h-6 w-6" />
                             )}
-                        </button> */}
+                        </button>
                         <button
                             type="button"
                             className="-m-2.5 rounded-md p-2.5"

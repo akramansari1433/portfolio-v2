@@ -37,8 +37,8 @@ export default function Example() {
                                 </p>
                                 <div className="mt-10 flex items-center gap-x-6">
                                     <Link
-                                        href="#"
-                                        className="rounded-md border-2 border-white bg-black px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:border-black hover:bg-white hover:text-black"
+                                        href="/about"
+                                        className="rounded-md border-2 border-white dark:border-black bg-black dark:bg-white px-3.5 py-2.5 text-sm font-semibold text-white dark:text-black shadow-sm hover:border-black hover:dark:border-white hover:bg-white hover:dark:bg-black hover:text-black hover:dark:text-white"
                                     >
                                         About
                                     </Link>
