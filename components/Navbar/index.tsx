@@ -79,7 +79,7 @@ export default function Navbar() {
                 </div>
             </nav>
             {mobileMenuOpen && (
-                <div className="fixed inset-0 bg-white p-6 font-mono md:hidden">
+                <div className="fixed inset-0 bg-white dark:bg-black p-6 font-mono md:hidden">
                     <div className="flex items-center justify-end gap-3">
                         <button
                             className="rounded-full border p-1"
@@ -129,8 +129,8 @@ export default function Navbar() {
                                             }
                                             className={`${
                                                 isActive
-                                                    ? "bg-black text-white"
-                                                    : "text-black"
+                                                    ? "bg-black dark:bg-white text-white dark:text-black"
+                                                    : ""
                                             } -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-black hover:text-white`}
                                         >
                                             {item.name}
