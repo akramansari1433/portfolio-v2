@@ -8,7 +8,7 @@ export default function Example() {
         <div className="bg-white dark:bg-black">
             <div className="relative isolate overflow-hidden bg-gradient-to-b from-gray-200/20">
                 <div
-                    className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl  shadow-gray-600/10 ring-1 ring-indigo-50 dark:bg-black sm:-mr-80 lg:-mr-96"
+                    className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl  shadow-gray-600/10 ring-1 ring-indigo-50 dark:ring-gray-900 dark:bg-black sm:-mr-80 lg:-mr-96"
                     aria-hidden="true"
                 />
                 <div className="flex h-[calc(100vh-5rem)] items-center justify-center p-10">
