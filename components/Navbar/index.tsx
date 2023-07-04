@@ -52,7 +52,7 @@ export default function Navbar() {
                                 href={item.href}
                                 className={`${
                                     isActive
-                                        ? "border-black"
+                                        ? "border-black dark:border-white"
                                         : "border-transparent"
                                 } border-b-2 px-2 py-1 text-lg font-semibold  hover:border-black`}
                             >
@@ -82,7 +82,7 @@ export default function Navbar() {
                 <div className="fixed inset-0 bg-white dark:bg-black p-6 font-mono md:hidden">
                     <div className="flex items-center justify-end gap-3">
                         <button
-                            className="rounded-full border p-1"
+                            className="rounded-full border p-2"
                             onClick={() =>
                                 theme === "light"
                                     ? setTheme("dark")
@@ -90,9 +90,9 @@ export default function Navbar() {
                             }
                         >
                             {theme === "dark" ? (
-                                <MoonIcon className="h-6 w-6" />
+                                <MoonIcon className="h-5 w-5" />
                             ) : (
-                                <SunIcon className="h-6 w-6" />
+                                <SunIcon className="h-5 w-5" />
                             )}
                         </button>
                         <button
