@@ -40,13 +40,7 @@ export default function Example() {
                                         href="/about"
                                         className="rounded-md border-2 border-white dark:border-black bg-black dark:bg-white px-3.5 py-2.5 text-sm font-semibold text-white dark:text-black shadow-sm hover:border-black hover:dark:border-white hover:bg-white hover:dark:bg-black hover:text-black hover:dark:text-white"
                                     >
-                                        About
-                                    </Link>
-                                    <Link
-                                        href="#"
-                                        className="px-3.5 py-2.5 text-sm font-semibold leading-6"
-                                    >
-                                        My Work{" "}
+                                        About Me{" "}
                                         <span aria-hidden="true">→</span>
                                     </Link>
                                 </div>
