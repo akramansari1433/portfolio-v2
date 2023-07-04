@@ -62,7 +62,7 @@ export default function Example() {
                                 ease: "easeInOut",
                             }}
                         >
-                            <div className="rounded-xl border border-black p-3">
+                            <div className="rounded-xl border border-black dark:border-white p-3">
                                 <Image
                                     src="/images/profile.jpg"
                                     alt=""
