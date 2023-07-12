@@ -1,12 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
-import {
-    Bars3Icon,
-    MoonIcon,
-    SunIcon,
-    XMarkIcon,
-} from "@heroicons/react/24/outline";
+import { Bars3Icon, MoonIcon, SunIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -24,22 +19,15 @@ export default function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
-        <header className="sticky top-0 z-50 h-20 bg-white dark:bg-black max-w-7xl mx-auto">
-            <nav
-                className="flex items-center justify-between p-6 font-mono lg:px-8"
-                aria-label="Global"
-            >
+        <header className="sticky top-0 z-50 h-20 bg-white dark:bg-black">
+            <nav className="flex items-center justify-between p-6 font-mono lg:px-8" aria-label="Global">
                 <Link href={"/"}>
-                    <div className="flex h-10 w-10 items-center justify-center rounded-[50%] bg-black dark:bg-white p-2 font-sans text-lg text-white dark:text-black">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-[50%] bg-black p-2 font-sans text-lg text-white dark:bg-white dark:text-black">
                         AA
                     </div>
                 </Link>
                 <div className="flex w-full justify-end md:hidden">
-                    <button
-                        type="button"
-                        className="-m-2.5 rounded-md p-2.5"
-                        onClick={() => setMobileMenuOpen(true)}
-                    >
+                    <button type="button" className="-m-2.5 rounded-md p-2.5" onClick={() => setMobileMenuOpen(true)}>
                         <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                     </button>
                 </div>
@@ -51,9 +39,7 @@ export default function Navbar() {
                                 key={item.name}
                                 href={item.href}
                                 className={`${
-                                    isActive
-                                        ? "border-black dark:border-white"
-                                        : "border-transparent"
+                                    isActive ? "border-black dark:border-white" : "border-transparent"
                                 } border-b-2 px-2 py-1 text-lg font-semibold  hover:border-black`}
                             >
                                 {item.name}
@@ -64,36 +50,20 @@ export default function Navbar() {
                 <div className="hidden md:flex">
                     <button
                         className="rounded-full border p-2"
-                        onClick={() =>
-                            theme === "light"
-                                ? setTheme("dark")
-                                : setTheme("light")
-                        }
+                        onClick={() => (theme === "light" ? setTheme("dark") : setTheme("light"))}
                     >
-                        {theme === "dark" ? (
-                            <MoonIcon className="h-5 w-5" />
-                        ) : (
-                            <SunIcon className="h-5 w-5" />
-                        )}
+                        {theme === "dark" ? <MoonIcon className="h-5 w-5" /> : <SunIcon className="h-5 w-5" />}
                     </button>
                 </div>
             </nav>
             {mobileMenuOpen && (
-                <div className="fixed inset-0 bg-white dark:bg-black p-6 font-mono md:hidden">
+                <div className="fixed inset-0 bg-white p-6 font-mono dark:bg-black md:hidden">
                     <div className="flex items-center justify-end gap-3">
                         <button
                             className="rounded-full border p-2"
-                            onClick={() =>
-                                theme === "light"
-                                    ? setTheme("dark")
-                                    : setTheme("light")
-                            }
+                            onClick={() => (theme === "light" ? setTheme("dark") : setTheme("light"))}
                         >
-                            {theme === "dark" ? (
-                                <MoonIcon className="h-5 w-5" />
-                            ) : (
-                                <SunIcon className="h-5 w-5" />
-                            )}
+                            {theme === "dark" ? <MoonIcon className="h-5 w-5" /> : <SunIcon className="h-5 w-5" />}
                         </button>
                         <button
                             type="button"
@@ -124,13 +94,9 @@ export default function Navbar() {
                                     >
                                         <Link
                                             href={item.href}
-                                            onClick={() =>
-                                                setMobileMenuOpen(false)
-                                            }
+                                            onClick={() => setMobileMenuOpen(false)}
                                             className={`${
-                                                isActive
-                                                    ? "bg-black dark:bg-white text-white dark:text-black"
-                                                    : ""
+                                                isActive ? "bg-black text-white dark:bg-white dark:text-black" : ""
                                             } -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-black hover:text-white`}
                                         >
                                             {item.name}
