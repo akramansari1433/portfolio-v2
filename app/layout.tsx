@@ -12,7 +12,7 @@ export default function RootLayout({
             <body>
                 <Provider>
                     <Navbar />
-                    <main>{children}</main>
+                    <main className="max-w-7xl mx-auto">{children}</main>
                 </Provider>
             </body>
         </html>
