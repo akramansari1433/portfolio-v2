@@ -5,7 +5,7 @@ import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import WorkExperience from "@/components/WorkExperience";
-import { HomeIcon } from "@heroicons/react/24/solid";
+import { ChevronUpIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import React from "react";
 
@@ -48,8 +48,8 @@ export default function Home() {
             <Link href="#hero">
                 <footer className="sticky bottom-5 w-full cursor-pointer">
                     <div className="flex items-center justify-center">
-                        <div className="h-10 w-10 bg-green-500/80 rounded-full flex items-center justify-center">
-                            <HomeIcon className="h-7 w-17 pb-0.5 hover:grayscale-100 text-white animate-pulse" />
+                        <div className="p-2 border bg-gray-400 dark:bg-transparent rounded-full">
+                            <ChevronUpIcon className="h-6 w-6 text-white animate-pulse" />
                         </div>
                     </div>
                 </footer>
