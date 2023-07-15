@@ -43,27 +43,27 @@ export default function Header() {
                 ))}
             </motion.div>
 
-            {/* <Link href="#contact"> */}
-            <motion.div
-                initial={{
-                    x: 500,
-                    opacity: 0.5,
-                    scale: 0.5,
-                }}
-                animate={{
-                    x: 0,
-                    opacity: 1,
-                    scale: 1,
-                }}
-                transition={{
-                    duration: 1.5,
-                }}
-                className="flex cursor-pointer flex-row items-center text-gray-300"
-            >
-                <SocialIcon className="cursor-pointer" network="email" fgColor="grey" bgColor="transparent" />
-                <p className="hidden text-sm uppercase text-gray-400 md:inline-flex">Get in touch</p>
-            </motion.div>
-            {/* </Link> */}
+            <Link href="#contact">
+                <motion.div
+                    initial={{
+                        x: 500,
+                        opacity: 0.5,
+                        scale: 0.5,
+                    }}
+                    animate={{
+                        x: 0,
+                        opacity: 1,
+                        scale: 1,
+                    }}
+                    transition={{
+                        duration: 1.5,
+                    }}
+                    className="flex cursor-pointer flex-row items-center text-gray-300"
+                >
+                    <SocialIcon className="cursor-pointer" network="email" fgColor="grey" bgColor="transparent" />
+                    <p className="hidden text-sm uppercase text-gray-400 md:inline-flex">Get in touch</p>
+                </motion.div>
+            </Link>
         </header>
     );
 }
