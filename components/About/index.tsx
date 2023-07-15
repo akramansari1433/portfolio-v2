@@ -26,14 +26,14 @@ export default function About() {
                     opacity: 1,
                 }}
                 viewport={{ once: true }}
-                className="-mb-24 md:mb-0 flex-shrink-0 w-52 h-52 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
+                className="-mb-24 md:mb-0 flex-shrink-0 w-52 md:w-64 rounded-full object-cover md:rounded-lg  aspect-square"
                 src="/images/profile.jpg"
             />
-            <div className="space-y-5 md:space-y-10 px-0 md:px-10">
-                <h4 className="text-xl md:text-4xl font-semibold">
+            <div className="space-y-5 md:space-y-10 px-0 md:px-10 ">
+                <h4 className="text-xl md:text-4xl font-semibold dark:text-gray-200">
                     Here is a <span className=" underline decoration-green-500">little</span> background
                 </h4>
-                <p className="text-sm md:text-lg lg:text-lg text-justify">
+                <p className="text-sm md:text-lg lg:text-lg text-justify dark:text-gray-300">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis provident nisi, dignissimos deleniti
                     mollitia modi recusandae et iusto totam dolore. Dolore, repellat? Sint excepturi autem magnam
                     corrupti quidem sed laudantium! Lorem ipsum dolor sit amet consectetur adipisicing elit.

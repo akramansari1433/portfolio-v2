@@ -13,7 +13,7 @@ export default function Skills() {
             <h3 className="absolute top-20 md:top-24 uppercase tracking-[20px] text-gray-700 dark:text-gray-200 text-xl md:text-2xl font-medium">
                 Skills
             </h3>
-            <h3 className="absolute top-32 md:top-36 uppercase tracking-[3px] text-gray-500 text-sm">
+            <h3 className="absolute top-32 md:top-36 uppercase tracking-[3px] text-gray-500 dark:text-gray-400 text-sm">
                 Hover over a skill for current proficiency
             </h3>
 

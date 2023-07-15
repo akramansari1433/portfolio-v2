@@ -1,5 +1,4 @@
 import React from "react";
-import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 type Props = {};
@@ -23,52 +22,40 @@ export default function ContactMe({}: Props) {
                 Contact
             </h3>
             <div className="flex flex-col space-y-4 md:space-y-5 lg:space-y-6 xl:space-y-6 2xl:space-y-10">
-                <h4 className="text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-semibold text-center">
-                    I have got just what you need. <span className="decoration-darkGreen/50 underline">Lets talk.</span>
+                <h4 className="text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-semibold text-center dark:text-gray-200">
+                    I have got just what you need. <span className="decoration-green-500 underline">Lets talk.</span>
                 </h4>
 
-                <div className="space-y-1 md:space-y-3 lg:space-y-3 xl:space-y-3 2xl:space-y-5">
-                    <div className="flex items-center space-x-5 justify-center">
-                        <PhoneIcon className="text-darkGreen h-7 w-7 animate-pulse" />
-                        <p className="text-lg md:text-2xl lg:text-2xl">+44 78 108 35 079</p>
-                    </div>
-                    <div className="flex items-center space-x-5 justify-center">
-                        <EnvelopeIcon className="text-darkGreen h-7 w-7 animate-pulse" />
-                        <p className="text-lg md:text-2xl lg:text-2xl">mitch.sparrow@hotmail.com</p>
-                    </div>
-                    <div className="flex items-center space-x-5 justify-center">
-                        <MapPinIcon className="text-darkGreen h-7 w-7 animate-pulse" />
-                        <p className="text-lg md:text-2xl lg:text-2xl">Glasgow, United Kingdom</p>
-                    </div>
-                </div>
-
-                <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-2 w-80 md:w-fit mx-auto">
-                    <div className="md:flex md:space-x-2 space-y-2 md:space-y-0 ">
+                <form
+                    onSubmit={handleSubmit(onSubmit)}
+                    className="flex flex-col items-center space-y-3 w-80 md:w-fit mx-auto"
+                >
+                    <div className="md:flex md:space-x-2 space-y-3 md:space-y-0 ">
                         <input
                             {...register("name")}
                             placeholder="Name"
-                            className="outline-none bg-slate-400/20 rounded-lg border-b-2 px-6 py-3 md:py-4  text-gray-500 placeholder-gray-500 transition-all focus:border-darkGreen/20 focus:text-darkGreen/80 hover:border-darkGreen/20 w-80 md:w-auto"
+                            className="outline-none bg-slate-400/20 dark:bg-slate-600/20 rounded-lg  px-6 py-3 text-gray-700 dark:text-gray-100 placeholder-gray-500 transition-all w-80 md:w-auto"
                             type="text"
                         />{" "}
                         <input
                             {...register("email")}
                             placeholder="Email"
-                            className="outline-none bg-slate-400/20 rounded-lg border-b-2 px-6 py-3 md:py-4  text-gray-500 placeholder-gray-500 transition-all focus:border-darkGreen/20 focus:text-darkGreen/80 hover:border-darkGreen/20 w-80 md:w-auto"
+                            className="outline-none bg-slate-400/20 dark:bg-slate-600/20 rounded-lg  px-6 py-3 md:py-4  text-gray-700 dark:text-gray-100 placeholder-gray-500 transition-all focus:border-darkGreen/20 focus:text-darkGreen/80 hover:border-darkGreen/20 w-80 md:w-auto"
                             type="email"
                         />
                     </div>
                     <input
                         {...register("subject")}
                         placeholder="Subject"
-                        className="outline-none bg-slate-400/20 rounded-lg border-b-2 px-6 py-3 md:py-4  text-gray-500 placeholder-gray-500 transition-all focus:border-darkGreen/20 focus:text-darkGreen/80 hover:border-darkGreen/20 "
+                        className="outline-none w-full bg-slate-400/20 dark:bg-slate-600/20 rounded-lg  px-6 py-3 md:py-4  text-gray-700 dark:text-gray-100 placeholder-gray-500 transition-all focus:border-darkGreen/20 focus:text-darkGreen/80 hover:border-darkGreen/20 "
                         type="text"
                     />
                     <textarea
                         {...register("message")}
                         placeholder="Message"
-                        className="outline-none bg-slate-400/20 rounded-lg border-b-2 px-6 py-3 md:py-4  text-gray-500 placeholder-gray-500 transition-all focus:border-darkGreen/20 focus:text-darkGreen/80 hover:border-darkGreen/20"
+                        className="outline-none w-full bg-slate-400/20 dark:bg-slate-600/20 rounded-lg  px-6 py-3 md:py-4 text-gray-700 dark:text-gray-100 placeholder-gray-500 transition-all focus:border-darkGreen/20 focus:text-darkGreen/80 hover:border-darkGreen/20"
                     />
-                    <button className="bg-green-500 py-3 md:py-5 px-10 rounded-lg text-white font-bold text-lg">
+                    <button className="bg-green-600 dark:bg-green-800 w-fit py-2  px-5 rounded-lg text-white font-bold text-lg">
                         {" "}
                         Submit
                     </button>

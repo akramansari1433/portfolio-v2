@@ -31,9 +31,8 @@ export default function Projects() {
                         />
 
                         <div className="space-y-5 md:space-y-8 px-0 md:px-10 max-w-6xl">
-                            <h4 className="text-lg md:text-2xl lg:text-3xl font-semibold text-center">
-                                <span className="underline decoration-green-500/50">Project {i + 1}:</span> Some App
-                                Nane
+                            <h4 className="text-lg md:text-2xl lg:text-3xl font-semibold text-center dark:text-gray-200">
+                                Project {i + 1}: Some App
                             </h4>
                             <div className="flex items-center space-x-2 justify-center ">
                                 <img
@@ -53,7 +52,7 @@ export default function Projects() {
                                 />
                             </div>
 
-                            <p className="text-sm md:text-md lg:text-lg text-justify ">
+                            <p className="text-sm md:text-md lg:text-lg text-justify dark:text-gray-300">
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae optio laborum cupiditate
                                 quibusdam molestiae pariatur facere quidem odit tenetur deleniti eum asperiores
                                 distinctio nemo delectus quia harum, fuga laudantium in.
@@ -63,7 +62,7 @@ export default function Projects() {
                 ))}
             </div>
 
-            <div className="w-full absolute top-[20%] md:top-[30%] bg-green-500/40 left-0 h-[500px] -skew-y-12"></div>
+            <div className="w-full absolute top-[20%] md:top-[30%] bg-green-500/30 dark:bg-green-500/20 left-0 h-[500px] -skew-y-12"></div>
         </motion.div>
     );
 }
