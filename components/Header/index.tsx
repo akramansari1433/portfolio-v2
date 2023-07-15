@@ -20,7 +20,7 @@ const defaultSocials = [
 
 export default function Header() {
     return (
-        <header className="sticky top-0 z-20 mx-auto flex max-w-7xl items-start justify-between p-5 xl:items-center">
+        <header className="sticky top-0 z-20 mx-auto flex max-w-7xl items-center justify-between p-5 ">
             <motion.div
                 initial={{
                     x: -500,
