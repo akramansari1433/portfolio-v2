@@ -24,32 +24,32 @@ export default function Hero() {
             />
 
             <div className="z-20">
-                <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[10px] md:tracking-[15px]">
+                <h2 className="text-sm font-medium uppercase text-gray-600 dark:text-gray-200 pb-2 tracking-[10px] md:tracking-[15px]">
                     Software Engineer
                 </h2>
-                <h1 className="text-2xl md:text-5xl lg:text-6xl font-semibold px-10">
+                <h1 className="text-xl md:text-4xl font-semibold px-10 dark:text-white">
                     <span className="mr-3">{text}</span>
                     <Cursor cursorColor="#68B2A0" />
                 </h1>
 
                 <div className="pt-5">
                     <Link href="#about">
-                        <button className="px-6 rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 hover:border-gray-600 hover:text-gray-500">
+                        <button className="px-6 rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 dark:text-gray-200 hover:border-gray-600 hover:text-gray-500">
                             About
                         </button>
                     </Link>
                     <Link href="#experience">
-                        <button className="px-6 rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 hover:border-gray-600 hover:text-gray-500">
+                        <button className="px-6 rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 dark:text-gray-200 hover:border-gray-600 hover:text-gray-500">
                             Experience
                         </button>
                     </Link>
                     <Link href="#skills">
-                        <button className="px-6 rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 hover:border-gray-600 hover:text-gray-500">
+                        <button className="px-6 rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 dark:text-gray-200 hover:border-gray-600 hover:text-gray-500">
                             Skills
                         </button>
                     </Link>
                     <Link href="#projects">
-                        <button className="px-6 rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 hover:border-gray-600 hover:text-gray-500">
+                        <button className="px-6 rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 dark:text-gray-200 hover:border-gray-600 hover:text-gray-500">
                             Projects
                         </button>
                     </Link>
