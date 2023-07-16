@@ -23,15 +23,20 @@ export default function Projects({ projects }: Props) {
                         key={i}
                         className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-10 md:p-44 h-screen"
                     >
-                        <motion.img
+                        <motion.div
                             initial={{ y: -100, opacity: 0 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1.2 }}
                             viewport={{ once: true }}
-                            className=" h-36 md:h-64 w-auto object-cover"
-                            src={urlForImage(project.image.asset).url()}
-                            alt="Project Image"
-                        />
+                        >
+                            <Image
+                                className=" h-36 md:h-64 w-auto object-cover"
+                                src={urlForImage(project.image.asset).url()}
+                                alt="Project Image"
+                                height={500}
+                                width={500}
+                            />
+                        </motion.div>
 
                         <div className="space-y-5 px-0 md:px-10 max-w-6xl">
                             <h4 className="text-lg md:text-2xl lg:text-3xl font-semibold text-center dark:text-gray-200">

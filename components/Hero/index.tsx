@@ -24,6 +24,7 @@ export default function Hero({ pageInfo }: Props) {
                 alt="Hero Image"
                 height={500}
                 width={500}
+                priority
             />
 
             <div className="z-20">
