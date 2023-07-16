@@ -9,6 +9,7 @@ import { client } from "@/sanity/lib/client";
 import { ChevronUpIcon } from "@heroicons/react/24/solid";
 import { GetStaticProps } from "next";
 import { groq } from "next-sanity";
+import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 
@@ -26,6 +27,11 @@ export default function Home({ pageInfo, experiences, projects, skills, socials 
             className="bg-gray-200 dark:bg-gray-900 text-black h-screen snap-y snap-mandatory
             overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-darkGreen/80"
         >
+            <Head>
+                <title>Akram Ansari</title>
+                <meta property="og:title" content="Akram's - Portfolio" key="title" />
+            </Head>
+
             <Header socials={socials} />
 
             {/* Hero */}
