@@ -2,9 +2,12 @@ import Link from "next/link";
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
-import Image from "next/image";
+import NextImage from "next/image"; // Corrected import
+import { urlForImage } from "@/sanity/lib/image";
 
-export default function Hero() {
+type Props = { pageInfo: PageInfo };
+
+export default function Hero({ pageInfo }: Props) {
     const [text, count] = useTypewriter({
         words: [`Hi, the name's Akram Ansari`, "I am a fullstack developer"],
         loop: true,
@@ -15,9 +18,9 @@ export default function Hero() {
         <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
             <BackgroundCircles />
 
-            <Image
+            <NextImage
                 className="relative rounded-full h-32 w-32 mx-auto object-cover"
-                src="/images/profile.jpg"
+                src={urlForImage(pageInfo?.heroImage.asset).url()}
                 alt=""
                 height={500}
                 width={500}
@@ -25,7 +28,7 @@ export default function Hero() {
 
             <div className="z-20">
                 <h2 className="text-sm font-medium uppercase text-gray-600 dark:text-gray-200 pb-2 tracking-[10px] md:tracking-[15px]">
-                    Software Engineer
+                    {pageInfo.role}
                 </h2>
                 <h1 className="text-xl md:text-4xl font-semibold px-10 dark:text-white">
                     <span className="mr-3">{text}</span>

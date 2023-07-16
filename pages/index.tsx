@@ -29,21 +29,21 @@ export default function Home({ pageInfo, experiences, projects, skills, socials 
             className="bg-gray-200 dark:bg-gray-900 text-black h-screen snap-y snap-mandatory
             overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-darkGreen/80"
         >
-            <Header />
+            <Header socials={socials} />
 
             {/* Hero */}
             <section id="hero" className="snap-start">
-                <Hero />
+                <Hero pageInfo={pageInfo} />
             </section>
 
             {/* About */}
             <section id="about" className="snap-center">
-                <About />
+                <About pageInfo={pageInfo} />
             </section>
 
             {/* Experiences */}
             <section id="experience" className="snap-center">
-                <WorkExperience />
+                <WorkExperience experiences={experiences} />
             </section>
 
             {/* Skills */}

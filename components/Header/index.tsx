@@ -6,18 +6,11 @@ import { useRouter } from "next/router";
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 
-const defaultSocials = [
-    {
-        title: "Github",
-        url: "https://github.com/akramansari1433",
-    },
-    {
-        title: "LinkedIn",
-        url: "https://www.linkedin.com/in/akram-ansari-2474ab156/",
-    },
-];
+type Props = {
+    socials: Social[];
+};
 
-export default function Header() {
+export default function Header({ socials }: Props) {
     const { theme, setTheme } = useTheme();
     const router = useRouter();
     return (
@@ -39,7 +32,7 @@ export default function Header() {
                 className=" flex flex-row items-center"
             >
                 {/* React social icons */}
-                {defaultSocials.map((social, idx) => (
+                {socials.map((social, idx) => (
                     <SocialIcon
                         key={idx}
                         url={social.url}

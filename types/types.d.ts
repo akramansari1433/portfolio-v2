@@ -7,10 +7,7 @@ interface SanityBody {
 
 interface Image {
     _type: "image";
-    asset: {
-        _ref: string;
-        _type: "reference";
-    };
+    asset: Reference;
 }
 
 interface PageInfo extends SanityBody {
