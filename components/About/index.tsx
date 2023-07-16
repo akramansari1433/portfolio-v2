@@ -1,5 +1,6 @@
 import { urlForImage } from "@/sanity/lib/image";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import React from "react";
 
 type Props = { pageInfo: PageInfo };
@@ -16,7 +17,7 @@ export default function About({ pageInfo }: Props) {
                 About
             </h3>
 
-            <motion.img
+            <motion.div
                 initial={{
                     x: -200,
                     opacity: 0,
@@ -29,10 +30,17 @@ export default function About({ pageInfo }: Props) {
                     opacity: 1,
                 }}
                 viewport={{ once: true }}
-                className="-mb-24 md:mb-0 flex-shrink-0 w-52 md:w-64 rounded-full object-cover md:rounded-lg  aspect-square"
-                src={urlForImage(pageInfo.profilePic.asset).url()}
-                alt={pageInfo.name}
-            />
+                className="-mb-24 md:mb-0 flex-shrink-0 "
+            >
+                <Image
+                    className="w-52 md:w-64 rounded-full md:rounded-lg aspect-square"
+                    src={urlForImage(pageInfo.profilePic.asset).url()}
+                    alt={pageInfo.name}
+                    height={256} // Set the desired height
+                    width={256} // Set the desired width
+                    objectFit="cover"
+                />
+            </motion.div>
             <div className="space-y-5 md:space-y-10 px-0 md:px-10 ">
                 <h4 className="text-xl md:text-4xl font-semibold dark:text-gray-200">
                     Here is a <span className=" underline decoration-green-500">little</span> background
