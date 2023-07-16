@@ -1,5 +1,6 @@
 import { urlForImage } from "@/sanity/lib/image";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import React from "react";
 
 type Props = { experience: Experience };
@@ -21,11 +22,13 @@ export default function ExperienceCard({ experience }: Props) {
                 <p className="font-bold text-md md:text-2xl  mt-1 text-lightGreen">{experience.company}</p>
                 <div className="flex space-x-2 my-2">
                     {experience.technologies.map((technology) => (
-                        <img
+                        <Image
                             key={technology._id}
                             className="h-10 w-10 rounded-full object-cover"
                             src={urlForImage(technology.image.asset).url()}
                             alt={technology.title}
+                            height={100}
+                            width={100}
                         />
                     ))}
                 </div>

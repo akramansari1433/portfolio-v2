@@ -1,5 +1,6 @@
 import { urlForImage } from "@/sanity/lib/image";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import React from "react";
 
 type Props = { projects: Project[] };
@@ -38,11 +39,13 @@ export default function Projects({ projects }: Props) {
                             </h4>
                             <div className="flex items-center space-x-2 justify-center ">
                                 {project?.technologies.map((technology) => (
-                                    <img
+                                    <Image
                                         key={technology._id}
                                         className="h-10 w-10 rounded-full object-cover"
                                         src={urlForImage(technology?.image.asset).url()}
                                         alt=""
+                                        height={100}
+                                        width={100}
                                     />
                                 ))}
                             </div>
