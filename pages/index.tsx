@@ -66,7 +66,11 @@ export default function Home({ pageInfo, experiences, projects, skills, socials 
 
             <footer className="sticky bottom-5 w-full cursor-pointer">
                 <div className="flex items-center justify-center">
-                    <Link href="#hero" className="p-2 border bg-gray-400 dark:bg-transparent rounded-full">
+                    <Link
+                        aria-label="Home"
+                        href="#hero"
+                        className="p-2 border bg-gray-400 dark:bg-transparent rounded-full"
+                    >
                         <ChevronUpIcon className="h-6 w-6 text-white animate-pulse" />
                     </Link>
                 </div>

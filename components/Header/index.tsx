@@ -40,14 +40,19 @@ export default function Header({ socials }: Props) {
                         bgColor="transparent"
                     />
                 ))}
-                <button className="flex  flex-row items-center " onClick={() => router.push("#contact")}>
+                <button
+                    id="get-in-touch-button"
+                    aria-label="Get in touch"
+                    className="flex  flex-row items-center "
+                    onClick={() => router.push("#contact")}
+                >
                     <SocialIcon
                         className="cursor-pointer"
                         network="email"
                         fgColor={theme === "dark" ? "white" : "gray"}
                         bgColor="transparent"
                     />
-                    <p className="uppercase hidden md:inline-flex text-sm text-gray-400 dark:text-gray-200">
+                    <p className="uppercase hidden md:inline-flex text-sm text-gray-500 dark:text-gray-200">
                         Get in touch
                     </p>
                 </button>

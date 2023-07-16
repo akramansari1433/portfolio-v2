@@ -36,8 +36,8 @@ export default function About({ pageInfo }: Props) {
                     className="w-52 md:w-64 rounded-full md:rounded-lg aspect-square"
                     src={urlForImage(pageInfo.profilePic.asset).url()}
                     alt={pageInfo.name}
-                    height={256} // Set the desired height
-                    width={256} // Set the desired width
+                    height={256}
+                    width={256}
                     objectFit="cover"
                 />
             </motion.div>
