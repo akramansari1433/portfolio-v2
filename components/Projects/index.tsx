@@ -28,7 +28,7 @@ export default function Projects({ projects }: Props) {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1.2 }}
                             viewport={{ once: true }}
-                            className=" h-28 md:h-64 object-contain"
+                            className=" h-36 md:h-64 w-auto object-cover"
                             src={urlForImage(project.image.asset).url()}
                             alt="Project Image"
                         />
