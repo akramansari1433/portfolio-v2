@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
-import NextImage from "next/image"; // Corrected import
+import Image from "next/image";
 import { urlForImage } from "@/sanity/lib/image";
 
 type Props = { pageInfo: PageInfo };
@@ -18,7 +18,7 @@ export default function Hero({ pageInfo }: Props) {
         <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
             <BackgroundCircles />
 
-            <NextImage
+            <Image
                 className="relative rounded-full h-32 w-32 mx-auto object-cover"
                 src={urlForImage(pageInfo?.heroImage.asset).url()}
                 alt="Hero Image"
