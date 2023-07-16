@@ -28,12 +28,12 @@ export default function Projects({ projects }: Props) {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1.2 }}
                             viewport={{ once: true }}
-                            className=" h-28 xl:h-80 md:h-72 object-contain"
+                            className=" h-28 md:h-64 object-contain"
                             src={urlForImage(project.image.asset).url()}
-                            alt=""
+                            alt="Project Image"
                         />
 
-                        <div className="space-y-5 md:space-y-8 px-0 md:px-10 max-w-6xl">
+                        <div className="space-y-5 px-0 md:px-10 max-w-6xl">
                             <h4 className="text-lg md:text-2xl lg:text-3xl font-semibold text-center dark:text-gray-200">
                                 {project.title}
                             </h4>
@@ -41,9 +41,9 @@ export default function Projects({ projects }: Props) {
                                 {project?.technologies.map((technology) => (
                                     <Image
                                         key={technology._id}
-                                        className="h-10 w-10 rounded-full object-cover"
+                                        className="h-10 w-10 object-cover"
                                         src={urlForImage(technology?.image.asset).url()}
-                                        alt=""
+                                        alt={technology.title}
                                         height={100}
                                         width={100}
                                     />
