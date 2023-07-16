@@ -21,7 +21,7 @@ export default function Hero({ pageInfo }: Props) {
             <NextImage
                 className="relative rounded-full h-32 w-32 mx-auto object-cover"
                 src={urlForImage(pageInfo?.heroImage.asset).url()}
-                alt=""
+                alt="Hero Image"
                 height={500}
                 width={500}
             />

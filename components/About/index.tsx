@@ -31,6 +31,7 @@ export default function About({ pageInfo }: Props) {
                 viewport={{ once: true }}
                 className="-mb-24 md:mb-0 flex-shrink-0 w-52 md:w-64 rounded-full object-cover md:rounded-lg  aspect-square"
                 src={urlForImage(pageInfo.profilePic.asset).url()}
+                alt={pageInfo.name}
             />
             <div className="space-y-5 md:space-y-10 px-0 md:px-10 ">
                 <h4 className="text-xl md:text-4xl font-semibold dark:text-gray-200">
