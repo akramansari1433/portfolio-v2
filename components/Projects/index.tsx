@@ -1,8 +1,10 @@
+import { urlForImage } from "@/sanity/lib/image";
 import { motion } from "framer-motion";
 import React from "react";
 
-export default function Projects() {
-    const projects = [1, 2, 3, 4, 5];
+type Props = { projects: Project[] };
+
+export default function Projects({ projects }: Props) {
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -26,36 +28,27 @@ export default function Projects() {
                             transition={{ duration: 1.2 }}
                             viewport={{ once: true }}
                             className=" h-28 xl:h-80 md:h-72 object-contain"
-                            src="https://cdn.sanity.io/images/ltuexkre/production/af7ca99b5a796d0698cf9121a4a0795b5022b6be-666x375.png"
+                            src={urlForImage(project.image.asset).url()}
                             alt=""
                         />
 
                         <div className="space-y-5 md:space-y-8 px-0 md:px-10 max-w-6xl">
                             <h4 className="text-lg md:text-2xl lg:text-3xl font-semibold text-center dark:text-gray-200">
-                                Project {i + 1}: Some App
+                                {project.title}
                             </h4>
                             <div className="flex items-center space-x-2 justify-center ">
-                                <img
-                                    className="h-8 w-8 rounded-full object-cover"
-                                    src="https://skillicons.dev/icons?i=react"
-                                    alt=""
-                                />
-                                <img
-                                    className="h-8 w-8 rounded-full object-cover"
-                                    src="https://skillicons.dev/icons?i=react"
-                                    alt=""
-                                />
-                                <img
-                                    className="h-8 w-8 rounded-full object-cover"
-                                    src="https://skillicons.dev/icons?i=react"
-                                    alt=""
-                                />
+                                {project?.technologies.map((technology) => (
+                                    <img
+                                        key={technology._id}
+                                        className="h-10 w-10 rounded-full object-cover"
+                                        src={urlForImage(technology?.image.asset).url()}
+                                        alt=""
+                                    />
+                                ))}
                             </div>
 
                             <p className="text-sm md:text-md lg:text-lg text-justify dark:text-gray-300">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae optio laborum cupiditate
-                                quibusdam molestiae pariatur facere quidem odit tenetur deleniti eum asperiores
-                                distinctio nemo delectus quia harum, fuga laudantium in.
+                                {project.summary}
                             </p>
                         </div>
                     </div>
