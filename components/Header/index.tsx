@@ -36,7 +36,7 @@ export default function Header({ socials }: Props) {
                     <SocialIcon
                         key={idx}
                         url={social.url}
-                        fgColor={theme === "dark" ? "white" : "gray"}
+                        fgColor={theme === "dark" ? "white" : "#4b5563"}
                         bgColor="transparent"
                     />
                 ))}
@@ -47,12 +47,13 @@ export default function Header({ socials }: Props) {
                     onClick={() => router.push("#contact")}
                 >
                     <SocialIcon
+                        role='button'
                         className="cursor-pointer"
                         network="email"
-                        fgColor={theme === "dark" ? "white" : "gray"}
+                        fgColor={theme === "dark" ? "white" : "#4b5563"}
                         bgColor="transparent"
                     />
-                    <p className="uppercase hidden md:inline-flex text-sm text-gray-500 dark:text-gray-200">
+                    <p className="uppercase hidden md:inline-flex text-sm text-gray-600 dark:text-gray-200">
                         Get in touch
                     </p>
                 </button>
@@ -76,7 +77,7 @@ export default function Header({ socials }: Props) {
                 <button
                     id="toggle-theme"
                     aria-label="Toggle Theme"
-                    className="border-2 p-1 border-gray-300 rounded-full text-gray-400 dark:text-white"
+                    className="border-2 p-1 border-gray-400 rounded-full text-gray-600 dark:text-white"
                     onClick={() => (theme === "light" ? setTheme("dark") : setTheme("light"))}
                 >
                     {theme === "dark" ? <SunIcon className="h-6 w-6" /> : <MoonIcon className="h-6 w-6" />}
