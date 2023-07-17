@@ -16,7 +16,7 @@ export default function ExperienceCard({ experience }: Props) {
                         {experience.technologies.map((technology) => (
                             <Image
                                 key={technology._id}
-                                className="h-10 w-10 rounded-full object-cover"
+                                className="h-10 w-10 object-cover"
                                 src={urlForImage(technology.image.asset).url()}
                                 alt={technology.title}
                                 height={100}
