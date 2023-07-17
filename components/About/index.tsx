@@ -29,7 +29,7 @@ export default function About({ pageInfo }: Props) {
                     x: 0,
                     opacity: 1,
                 }}
-                viewport={{ once: true }}
+                // viewport={{ once: true }}
                 className="-mb-24 md:mb-0 flex-shrink-0 "
             >
                 <Image

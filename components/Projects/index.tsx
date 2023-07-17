@@ -27,7 +27,6 @@ export default function Projects({ projects }: Props) {
                             initial={{ y: -100, opacity: 0 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1.2 }}
-                            viewport={{ once: true }}
                         >
                             <Image
                                 className=" h-36 md:h-64 w-auto object-cover"
