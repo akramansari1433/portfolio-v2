@@ -28,13 +28,13 @@ export default function Hero({ pageInfo }: Props) {
             />
 
             <div className="z-20">
-                <h2 className="text-sm font-medium uppercase text-gray-600 dark:text-gray-200 pb-2 tracking-[10px] md:tracking-[15px]">
+                <h1 className="text-sm font-medium uppercase text-gray-600 dark:text-gray-200 pb-2 tracking-[10px] md:tracking-[15px]">
                     {pageInfo.role}
-                </h2>
-                <h1 className="text-xl md:text-4xl font-semibold px-10 dark:text-white">
+                </h1>
+                <p className="text-xl md:text-4xl font-semibold px-10 dark:text-white">
                     <span className="mr-3">{text}</span>
                     <Cursor cursorColor="green" />
-                </h1>
+                </p>
 
                 <div className="pt-5">
                     <Link href="#about">
