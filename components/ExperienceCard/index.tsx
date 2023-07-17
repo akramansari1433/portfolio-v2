@@ -29,15 +29,20 @@ export default function ExperienceCard({ experience }: Props) {
                         {experience.isCurrentlyWorkingHere ? "Present" : new Date(experience?.dateEnded).toDateString()}
                     </p>
                 </div>
-                <motion.img
+                <motion.div
                     initial={{ opacity: 0, y: -100 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1.2 }}
-                    className="w-32 h-32 rounded-full lg:w-36 lg:h-36 object-cover object-center"
-                    src={urlForImage(experience.companyImage.asset).url()}
-                    alt={experience.company}
-                />
+                >
+                    <Image
+                        className="w-32 h-auto rounded-full lg:w-36 object-cover object-center"
+                        src={urlForImage(experience.companyImage.asset).url()}
+                        alt={experience.company}
+                        height={150}
+                        width={150}
+                    />
+                </motion.div>
             </div>
 
             <ul className="px-5 md:px-10 list-disc text-black space-y-1 text-sm md:text-lg overflow-y-scroll scrollbar-thin">
