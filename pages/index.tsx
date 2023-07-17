@@ -29,6 +29,7 @@ export default function Home({ pageInfo, experiences, projects, skills, socials 
         >
             <Head>
                 <title>Akram Ansari</title>
+                <meta name="description" content="Akram's - Portfolio" />
                 <meta property="og:title" content="Akram's - Portfolio" key="title" />
             </Head>
 
