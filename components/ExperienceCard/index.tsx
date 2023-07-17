@@ -7,11 +7,11 @@ type Props = { experience: Experience };
 
 export default function ExperienceCard({ experience }: Props) {
     return (
-        <article className="flex drop-shadow-xl flex-col rounded-3xl items-center flex-shrink-0 w-72  md:w-[600px] xl:w-[700px] snap-center bg-gradient-to-tr from-gray-200  to-green-500/40 p-5 md:p-8 hover:opacity-80 transition-opacity duration-200 ">
+        <article className="flex drop-shadow-xl flex-col rounded-3xl items-center flex-shrink-0 w-72  md:w-[600px] xl:w-[700px] snap-center bg-gradient-to-tr from-gray-200 dark:from-gray-600  to-green-500/40 dark:to-green-600/20 p-5 md:p-8">
             <div className="flex flex-col-reverse items-center md:flex-row md:items-start">
                 <div className="mt-5 w-full px-0 md:px-10">
-                    <h4 className="text-lg md:text-2xl font-light text-black">{experience.jobTitle}</h4>
-                    <p className="font-bold text-md md:text-2xl  mt-1 text-lightGreen">{experience.company}</p>
+                    <h4 className="text-lg md:text-2xl font-light dark:text-white">{experience.jobTitle}</h4>
+                    <p className="font-bold text-md md:text-2xl mt-1 dark:text-white">{experience.company}</p>
                     <div className="flex space-x-2 my-2">
                         {experience.technologies.map((technology) => (
                             <Image
@@ -24,7 +24,7 @@ export default function ExperienceCard({ experience }: Props) {
                             />
                         ))}
                     </div>
-                    <p className="uppercase py-2 md:py-3 text-gray-500 text-sm md:text-lg">
+                    <p className="uppercase py-2 md:py-3 text-gray-600 dark:text-gray-300 text-sm md:text-lg">
                         {new Date(experience?.dateStarted).toDateString()} -{" "}
                         {experience.isCurrentlyWorkingHere ? "Present" : new Date(experience?.dateEnded).toDateString()}
                     </p>
@@ -44,7 +44,7 @@ export default function ExperienceCard({ experience }: Props) {
                 </motion.div>
             </div>
 
-            <ul className="px-5 md:px-10 list-disc text-black space-y-1 text-sm md:text-lg overflow-y-scroll scrollbar-thin">
+            <ul className="px-5 md:px-10 list-disc dark:text-white space-y-1 text-sm md:text-lg overflow-y-scroll scrollbar-thin">
                 {experience?.points.map((point, i) => <li key={i}>{point}</li>)}
             </ul>
         </article>
