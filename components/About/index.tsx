@@ -38,7 +38,7 @@ export default function About({ pageInfo }: Props) {
                     alt={pageInfo.name}
                     height={256}
                     width={256}
-                    objectFit="cover"
+                    priority
                 />
             </motion.div>
             <div className="space-y-5 md:space-y-10 px-0 md:px-10 ">
