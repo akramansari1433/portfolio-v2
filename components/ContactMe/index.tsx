@@ -53,8 +53,7 @@ export default function ContactMe() {
                         placeholder="Message"
                         className="outline-none w-full bg-slate-400/20 dark:bg-slate-600/20 rounded-lg  px-6 py-3 md:py-4 text-gray-700 dark:text-gray-100 placeholder-gray-500 transition-all focus:border-darkGreen/20 focus:text-darkGreen/80 hover:border-darkGreen/20"
                     />
-                    <button className="bg-green-600 dark:bg-green-800 w-fit py-2  px-5 rounded-lg text-white font-bold text-lg">
-                        {" "}
+                    <button className="bg-green-700 dark:bg-green-800 w-fit py-2  px-5 rounded-lg text-white font-bold text-lg">
                         Submit
                     </button>
                 </form>
