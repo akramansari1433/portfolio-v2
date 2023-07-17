@@ -9,7 +9,14 @@ type Props = { pageInfo: PageInfo };
 
 export default function Hero({ pageInfo }: Props) {
     const [text, count] = useTypewriter({
-        words: [`Hi, the name's Akram Ansari`, "I am a fullstack developer"],
+        words: [
+            `Hi, the name's Akram Ansari`,
+            "I am a full-stack MERN developer",
+            "Passionate about coding.",
+            "Lifelong learner.",
+            "Building awesome projects.",
+            "Love problem-solving.",
+        ],
         loop: true,
         delaySpeed: 2000,
     });
@@ -38,22 +45,22 @@ export default function Hero({ pageInfo }: Props) {
 
                 <div className="pt-5">
                     <Link href="#about">
-                        <button className="px-6 rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 dark:text-gray-200 hover:border-gray-600 hover:text-gray-500">
+                        <button className="px-6 font-semibold rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 dark:text-gray-200 hover:border-gray-600">
                             About
                         </button>
                     </Link>
                     <Link href="#experience">
-                        <button className="px-6 rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 dark:text-gray-200 hover:border-gray-600 hover:text-gray-500">
+                        <button className="px-6 font-semibold rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 dark:text-gray-200 hover:border-gray-600">
                             Experience
                         </button>
                     </Link>
                     <Link href="#skills">
-                        <button className="px-6 rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 dark:text-gray-200 hover:border-gray-600 hover:text-gray-500">
+                        <button className="px-6 font-semibold rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 dark:text-gray-200 hover:border-gray-600 ">
                             Skills
                         </button>
                     </Link>
                     <Link href="#projects">
-                        <button className="px-6 rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 dark:text-gray-200 hover:border-gray-600 hover:text-gray-500">
+                        <button className="px-6 font-semibold rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 dark:text-gray-200 hover:border-gray-600">
                             Projects
                         </button>
                     </Link>
