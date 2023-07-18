@@ -31,7 +31,7 @@ export default function Projects({ projects }: Props) {
                             className="md:w-1/2"
                         >
                             <Image
-                                className=" object-contain"
+                                className="h-36 md:h-64 w-auto object-cover"
                                 src={urlForImage(project.image.asset).url()}
                                 alt="Project Image"
                                 height={500}
