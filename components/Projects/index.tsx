@@ -22,15 +22,16 @@ export default function Projects({ projects }: Props) {
                 {projects?.map((project, i) => (
                     <div
                         key={i}
-                        className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-10 md:p-44 h-screen"
+                        className="w-screen h-screen flex-shrink-0 snap-center flex flex-col md:flex-row space-y-5 items-center justify-center p-10 lg:p-20"
                     >
                         <motion.div
                             initial={{ y: -100, opacity: 0 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1.2 }}
+                            className="md:w-1/2"
                         >
                             <Image
-                                className=" h-36 md:h-64 w-auto object-cover"
+                                className=" object-contain"
                                 src={urlForImage(project.image.asset).url()}
                                 alt="Project Image"
                                 height={500}
@@ -38,15 +39,15 @@ export default function Projects({ projects }: Props) {
                             />
                         </motion.div>
 
-                        <div className="space-y-5 px-0 md:px-10 max-w-3xl">
+                        <div className="space-y-5 px-0 md:px-10 md:w-1/2 max-w-3xl">
                             <p className="text-lg md:text-2xl lg:text-3xl font-semibold text-center dark:text-gray-200">
                                 {project.title}
                             </p>
-                            <div className="flex items-center space-x-2 justify-center ">
+                            <div className="flex items-center gap-x-5 justify-center ">
                                 {project?.technologies.map((technology) => (
                                     <Image
                                         key={technology._id}
-                                        className="h-10 w-10 object-cover"
+                                        className="h-8 w-8 lg:h-10 lg:w-10 object-cover"
                                         src={urlForImage(technology?.image.asset).url()}
                                         alt={technology.title}
                                         height={100}
