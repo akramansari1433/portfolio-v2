@@ -2,6 +2,7 @@ import { urlForImage } from "@/sanity/lib/image";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
+import { BsBoxArrowUpRight, BsGithub } from "react-icons/bs";
 
 type Props = { projects: Project[] };
 
@@ -37,7 +38,7 @@ export default function Projects({ projects }: Props) {
                             />
                         </motion.div>
 
-                        <div className="space-y-5 px-0 md:px-10 max-w-6xl">
+                        <div className="space-y-5 px-0 md:px-10 max-w-3xl">
                             <h4 className="text-lg md:text-2xl lg:text-3xl font-semibold text-center dark:text-gray-200">
                                 {project.title}
                             </h4>
@@ -53,10 +54,21 @@ export default function Projects({ projects }: Props) {
                                     />
                                 ))}
                             </div>
-
                             <p className="text-sm md:text-md lg:text-lg text-justify dark:text-gray-300">
                                 {project.summary}
                             </p>
+                            <div className="flex gap-10 justify-center">
+                                {project.liveLink && (
+                                    <a href={project.liveLink} target="_blank">
+                                        <BsBoxArrowUpRight className="h-8 w-8" />
+                                    </a>
+                                )}
+                                {project.sourceCodeLink && (
+                                    <a href={project.sourceCodeLink} target="_blank">
+                                        <BsGithub className="h-8 w-8" />
+                                    </a>
+                                )}
+                            </div>
                         </div>
                     </div>
                 ))}

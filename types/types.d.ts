@@ -51,7 +51,8 @@ interface Experience extends SanityBody {
 interface Project extends SanityBody {
     _type: "project";
     title: string;
-    linkToBuild: string;
+    sourceCodeLink?: string;
+    liveLink?: string
     image: Image;
     summary: string;
     technologies: Technology[];

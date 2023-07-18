@@ -31,8 +31,13 @@ export default defineType({
             of: [{ type: "reference", to: { type: "skill" } }],
         },
         {
-            name: "linkToBuild",
-            title: "LinkToBuild",
+            name: "sourceCodeLink",
+            title: "Source Code Link",
+            type: "url",
+        },
+        {
+            name: "liveLink",
+            title: "Live Link",
             type: "url",
         },
     ],
