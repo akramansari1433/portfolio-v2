@@ -35,7 +35,7 @@ export default function ExperienceCard({ experience }: Props) {
                     transition={{ duration: 1.2 }}
                 >
                     <Image
-                        className="w-32 h-auto rounded-full lg:w-36 object-cover object-center"
+                        className="w-24 md:w-32 lg:w-36 h-auto rounded-full object-cover object-center"
                         src={urlForImage(experience.companyImage.asset).url()}
                         alt={experience.company}
                         height={150}
