@@ -1,7 +1,6 @@
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import { SocialIcon } from "react-social-icons";
