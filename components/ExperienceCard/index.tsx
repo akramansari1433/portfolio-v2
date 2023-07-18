@@ -12,7 +12,7 @@ export default function ExperienceCard({ experience }: Props) {
                 <div className="mt-5 w-full px-0 md:px-10">
                     <p className="text-lg md:text-2xl font-light dark:text-white">{experience.jobTitle}</p>
                     <p className="font-bold text-md md:text-2xl mt-1 dark:text-white">{experience.company}</p>
-                    <div className="flex space-x-2 my-2">
+                    <div className="flex overflow-auto scrollbar-none space-x-2 my-2">
                         {experience.technologies.map((technology) => (
                             <Image
                                 key={technology._id}
@@ -44,7 +44,7 @@ export default function ExperienceCard({ experience }: Props) {
                 </motion.div>
             </div>
 
-            <ul className="px-5 md:px-10 list-disc dark:text-white space-y-1 text-sm md:text-lg overflow-y-scroll scrollbar-thin">
+            <ul className="px-5 md:px-10 list-disc dark:text-white space-y-1 text-sm md:text-lg overflow-y-scroll">
                 {experience?.points.map((point, i) => <li key={i}>{point}</li>)}
             </ul>
         </article>
