@@ -39,9 +39,9 @@ export default function Projects({ projects }: Props) {
                         </motion.div>
 
                         <div className="space-y-5 px-0 md:px-10 max-w-3xl">
-                            <h4 className="text-lg md:text-2xl lg:text-3xl font-semibold text-center dark:text-gray-200">
+                            <p className="text-lg md:text-2xl lg:text-3xl font-semibold text-center dark:text-gray-200">
                                 {project.title}
-                            </h4>
+                            </p>
                             <div className="flex items-center space-x-2 justify-center ">
                                 {project?.technologies.map((technology) => (
                                     <Image

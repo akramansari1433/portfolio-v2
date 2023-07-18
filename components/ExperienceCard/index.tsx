@@ -10,7 +10,7 @@ export default function ExperienceCard({ experience }: Props) {
         <article className="flex drop-shadow-xl flex-col rounded-3xl items-center flex-shrink-0 w-72  md:w-[600px] xl:w-[700px] snap-center bg-gradient-to-tr from-gray-200 dark:from-gray-600  to-green-500/40 dark:to-green-600/20 p-5 md:p-8">
             <div className="flex flex-col-reverse items-center md:flex-row md:items-start">
                 <div className="mt-5 w-full px-0 md:px-10">
-                    <h4 className="text-lg md:text-2xl font-light dark:text-white">{experience.jobTitle}</h4>
+                    <p className="text-lg md:text-2xl font-light dark:text-white">{experience.jobTitle}</p>
                     <p className="font-bold text-md md:text-2xl mt-1 dark:text-white">{experience.company}</p>
                     <div className="flex space-x-2 my-2">
                         {experience.technologies.map((technology) => (

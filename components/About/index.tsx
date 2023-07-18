@@ -42,9 +42,9 @@ export default function About({ pageInfo }: Props) {
                 />
             </motion.div>
             <div className="space-y-5 md:space-y-10 px-0 md:px-10 ">
-                <h4 className="text-xl md:text-4xl font-semibold dark:text-gray-200">
+                <p className="text-xl md:text-4xl font-semibold dark:text-gray-200">
                     Here is a <span className=" underline decoration-green-500">little</span> background
-                </h4>
+                </p>
                 <p className="text-sm md:text-lg lg:text-lg text-justify dark:text-gray-300">
                     {pageInfo.backgroundInformation}
                 </p>
