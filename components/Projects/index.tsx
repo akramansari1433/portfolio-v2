@@ -60,12 +60,12 @@ export default function Projects({ projects }: Props) {
                             </p>
                             <div className="flex gap-10 items-center justify-center dark:text-white">
                                 {project.liveLink && (
-                                    <a href={project.liveLink} target="_blank">
+                                    <a aria-label="Preview Link" href={project.liveLink} target="_blank">
                                         <ArrowTopRightOnSquareIcon className="h-8 w-8" />
                                     </a>
                                 )}
                                 {project.sourceCodeLink && (
-                                    <a href={project.sourceCodeLink} target="_blank">
+                                    <a aria-label="Source Code" href={project.sourceCodeLink} target="_blank">
                                         <svg
                                             viewBox="0 0 1024 1024"
                                             fill="currentColor"
