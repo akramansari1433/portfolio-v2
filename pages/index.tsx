@@ -28,9 +28,9 @@ export default function Home({ pageInfo, experiences, projects, skills, socials 
             overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-darkGreen/80"
         >
             <Head>
-                <title>Akram Ansari</title>
-                <meta name="description" content="Akram's - Portfolio" />
-                <meta property="og:title" content="Akram's - Portfolio" key="title" />
+                <title>{pageInfo.name}</title>
+                <meta name="description" content="Portfolio" />
+                <meta property="og:title" content="Portfolio" key="title" />
             </Head>
 
             <Header socials={socials} />
