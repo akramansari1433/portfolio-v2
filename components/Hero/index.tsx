@@ -4,6 +4,7 @@ import Image from "next/image";
 import { urlForImage } from "@/sanity/lib/image";
 import { SocialIcon } from "react-social-icons";
 import { useTheme } from "next-themes";
+import { motion } from "framer-motion";
 
 type Props = { pageInfo: PageInfo; socials: Social[] };
 
@@ -22,11 +23,11 @@ export default function Hero({ pageInfo, socials }: Props) {
     });
 
     return (
-        <div className="h-[calc(100vh-5rem)] w-full flex items-center overflow-hidden">
-            <div className="w-full flex flex-col-reverse md:flex-row gap-10">
+        <div className="h-screen w-full flex items-center overflow-hidden">
+            <div className="w-full flex flex-col-reverse md:flex-row gap-5 md:gap-0">
                 <div className="w-full md:w-2/3 flex flex-col justify-center gap-5 px-10 md:px-20">
                     <div>
-                        <h1 className="text-5xl font-bold tracking-wide dark:text-white">{pageInfo.name}</h1>
+                        <h1 className="text-5xl font-bold md:tracking-widest dark:text-white">{pageInfo.name}</h1>
                         <h3 className="tracking-[8px] uppercase text-green-700 dark:text-green-500">{pageInfo.role}</h3>
                     </div>
                     <p className="text-lg md:text-2xl font-semibold dark:text-white">
@@ -53,7 +54,12 @@ export default function Hero({ pageInfo, socials }: Props) {
                         ))}
                     </div>
                 </div>
-                <div className="w-auto flex justify-center md:justify-start ">
+                <motion.div
+                    initial={{ opacity: 0, filter: "grayscale(100%)", x: 100 }}
+                    whileInView={{ opacity: 1, filter: "grayscale(0%)", x: 0 }}
+                    transition={{ duration: 1.2 }}
+                    className="w-auto flex justify-center md:justify-start "
+                >
                     <Image
                         className="object-cover h-48 w-48 md:h-56 md:w-56 rounded-md"
                         src={urlForImage(pageInfo?.heroImage.asset).url()}
@@ -62,7 +68,7 @@ export default function Hero({ pageInfo, socials }: Props) {
                         width={300}
                         priority
                     />
-                </div>
+                </motion.div>
             </div>
         </div>
     );

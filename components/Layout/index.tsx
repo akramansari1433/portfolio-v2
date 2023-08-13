@@ -7,9 +7,9 @@ type Props = {
 
 export default function Layout({ children }: Props) {
     return (
-        <>
+        <div className="bg-gray-200 dark:bg-gray-900">
             <Navbar />
             {children}
-        </>
+        </div>
     );
 }

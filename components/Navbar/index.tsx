@@ -30,7 +30,7 @@ export default function Navbar({}: Props) {
     const [menuOpen, setMenuOpen] = useState(false);
     const { theme, setTheme } = useTheme();
     return (
-        <div className="sticky top-0 h-20">
+        <div className="fixed inset-0 top-0 h-20 z-50">
             {/* desktop nav */}
             <nav className="flex items-center justify-between p-5">
                 <motion.div
@@ -44,7 +44,7 @@ export default function Navbar({}: Props) {
                 >
                     <Image
                         className="rounded-full object-cover"
-                        src="/images/profile2.gif"
+                        src="/images/logo.gif"
                         alt="logo"
                         height={50}
                         width={50}
@@ -55,7 +55,7 @@ export default function Navbar({}: Props) {
                         <Link
                             key={idx}
                             href={item.link}
-                            className="px-3 py-1.5 font-semibold tracking-widest uppercase dark:text-white border-b-2 border-transparent hover:border-primary-500"
+                            className="px-3 py-1.5 font-semibold tracking-widest uppercase dark:text-white border-b-2 border-transparent hover:border-green-500"
                         >
                             {item.name}
                         </Link>

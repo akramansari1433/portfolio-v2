@@ -29,7 +29,7 @@ export default function Home({ pageInfo, experiences, projects, skills, socials 
                 <meta property="og:title" content="Portfolio" key="title" />
             </Head>
             <div
-                className="bg-gray-200 dark:bg-gray-900 text-black h-screen snap-y snap-mandatory
+                className="h-screen snap-y snap-mandatory
             overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-darkGreen/80"
             >
                 {/* Hero */}
