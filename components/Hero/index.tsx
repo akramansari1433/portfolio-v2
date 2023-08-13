@@ -1,69 +1,67 @@
-import Link from "next/link";
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
-import BackgroundCircles from "./BackgroundCircles";
 import Image from "next/image";
 import { urlForImage } from "@/sanity/lib/image";
+import { SocialIcon } from "react-social-icons";
+import { useTheme } from "next-themes";
 
-type Props = { pageInfo: PageInfo };
+type Props = { pageInfo: PageInfo; socials: Social[] };
 
-export default function Hero({ pageInfo }: Props) {
+export default function Hero({ pageInfo, socials }: Props) {
+    const { theme } = useTheme();
     const [text, count] = useTypewriter({
         words: [
-            `Hi, the name's Akram Ansari`,
-            "I am a full-stack MERN developer",
+            "I am a full-stack MERN developer.",
             "Passionate about coding.",
             "Lifelong learner.",
             "Building awesome projects.",
             "Love problem-solving.",
         ],
         loop: true,
-        delaySpeed: 2000,
+        delaySpeed: 3000,
     });
 
     return (
-        <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
-            <BackgroundCircles />
-
-            <Image
-                className="relative rounded-full h-32 w-32 mx-auto object-cover"
-                src={urlForImage(pageInfo?.heroImage.asset).url()}
-                alt="Hero Image"
-                height={500}
-                width={500}
-                priority
-            />
-
-            <div className="z-20">
-                <h1 className="text-sm font-medium uppercase text-gray-600 dark:text-gray-200 pb-2 tracking-[10px] md:tracking-[15px]">
-                    {pageInfo.role}
-                </h1>
-                <p className="text-xl md:text-4xl font-semibold px-10 dark:text-white">
-                    <span className="mr-3">{text}</span>
-                    <Cursor cursorColor="green" />
-                </p>
-
-                <div className="pt-5">
-                    <Link href="#about">
-                        <button className="px-6 font-semibold rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 dark:text-gray-200 hover:border-gray-600">
-                            About
+        <div className="h-[calc(100vh-5rem)] w-full flex items-center overflow-hidden">
+            <div className="w-full flex flex-col-reverse md:flex-row gap-10">
+                <div className="w-full md:w-2/3 flex flex-col justify-center gap-5 px-10 md:px-20">
+                    <div>
+                        <h1 className="text-5xl font-bold tracking-wide dark:text-white">{pageInfo.name}</h1>
+                        <h3 className="tracking-[8px] uppercase text-green-700 dark:text-green-500">{pageInfo.role}</h3>
+                    </div>
+                    <p className="text-lg md:text-2xl font-semibold dark:text-white">
+                        <span className="mr-3">{text}</span>
+                        <Cursor cursorColor="orange" />
+                    </p>
+                    <div className="mt-5 flex gap-5">
+                        <button className="px-3 py-2 dark:text-white bg-green-500 dark:bg-green-700 font-semibold tracking-widest rounded-md">
+                            Resume
                         </button>
-                    </Link>
-                    <Link href="#experience">
-                        <button className="px-6 font-semibold rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 dark:text-gray-200 hover:border-gray-600">
-                            Experience
+                        <button className="px-3 py-2 dark:text-white border border-green-700 font-semibold tracking-widest rounded-md">
+                            Contact Me →
                         </button>
-                    </Link>
-                    <Link href="#skills">
-                        <button className="px-6 font-semibold rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 dark:text-gray-200 hover:border-gray-600 ">
-                            Skills
-                        </button>
-                    </Link>
-                    <Link href="#projects">
-                        <button className="px-6 font-semibold rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 dark:text-gray-200 hover:border-gray-600">
-                            Projects
-                        </button>
-                    </Link>
+                    </div>
+                    <div>
+                        {/* React social icons */}
+                        {socials.map((social, idx) => (
+                            <SocialIcon
+                                key={idx}
+                                url={social.url}
+                                fgColor={theme === "dark" ? "white" : "#4b5563"}
+                                bgColor="transparent"
+                            />
+                        ))}
+                    </div>
+                </div>
+                <div className="w-auto flex justify-center md:justify-start ">
+                    <Image
+                        className="object-cover h-48 w-48 md:h-56 md:w-56 rounded-md"
+                        src={urlForImage(pageInfo?.heroImage.asset).url()}
+                        alt="Hero Image"
+                        height={300}
+                        width={300}
+                        priority
+                    />
                 </div>
             </div>
         </div>
