@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
-type Inputs = {
+type ContactFormData = {
     name: string;
     email: string;
     subject: string;
@@ -9,9 +9,28 @@ type Inputs = {
 };
 
 export default function ContactMe() {
-    const { register, handleSubmit } = useForm<Inputs>();
-    const onSubmit: SubmitHandler<Inputs> = (formData) => {
-        window.location.href = `mailto:akramansari1433@gmail.com?subject=${formData.subject}&body=Hi, my name is ${formData.name}.${formData.message}`;
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { isSubmitting },
+    } = useForm<ContactFormData>();
+
+    const onSubmit: SubmitHandler<ContactFormData> = async (formData) => {
+        const response = await fetch("/api/send-email", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        });
+
+        if (response.ok) {
+            alert("Message sent successfully!");
+            reset();
+        } else {
+            alert("Failed to send message. Please try again later.");
+        }
     };
 
     return (
@@ -54,7 +73,7 @@ export default function ContactMe() {
                         className="outline-none w-full bg-slate-400/20 dark:bg-slate-600/20 rounded-lg  px-6 py-3 md:py-4 text-gray-700 dark:text-gray-100 placeholder-gray-500 transition-all focus:border-darkGreen/20 focus:text-darkGreen/80 hover:border-darkGreen/20"
                     />
                     <button className="bg-green-700 dark:bg-green-800 w-fit py-2  px-5 rounded-lg text-white font-bold text-lg">
-                        Submit
+                        {isSubmitting ? "Sending..." : "Send"}
                     </button>
                 </form>
             </div>
