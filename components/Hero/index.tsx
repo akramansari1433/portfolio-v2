@@ -23,7 +23,7 @@ export default function Hero({ pageInfo, socials }: Props) {
     });
 
     return (
-        <div className="h-screen w-full flex items-center overflow-hidden">
+        <div className="h-screen w-full flex items-center overflow-hidden max-w-7xl mx-auto">
             <div className="w-full flex flex-col-reverse md:flex-row gap-5 md:gap-0">
                 <div className="w-full md:w-2/3 flex flex-col justify-center gap-5 px-10 md:px-20">
                     <div>
