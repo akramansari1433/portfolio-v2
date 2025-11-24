@@ -5,6 +5,4 @@ import experience from "./experience";
 import skill from "./skill";
 import project from "./project";
 
-export const schema: { types: SchemaTypeDefinition[] } = {
-    types: [social, pageInfo, experience, skill, project],
-};
+export const schema: { types: SchemaTypeDefinition[] } = { types: [social, pageInfo, experience, skill, project] };
