@@ -36,5 +36,4 @@ yarn-error.log*
 next-env.d.ts
 
 # sanity typegen
-sanity.types.ts
 schema.json

@@ -16,7 +16,14 @@ export default function ContactMe() {
         handleSubmit,
         reset,
         formState: { isSubmitting },
-    } = useForm<ContactFormData>();
+    } = useForm<ContactFormData>({
+        defaultValues: {
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+        },
+    });
 
     const onSubmit: SubmitHandler<ContactFormData> = async (formData) => {
         const response = await fetch("/api/send-email", {
