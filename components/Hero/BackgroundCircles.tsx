@@ -17,32 +17,17 @@ export default function BackgroundCircles() {
             transition={{
                 duration: 2.5,
             }}
-            className="relative flex justify-center items-center"
+            className="relative flex items-center justify-center"
         >
-            <div
-                className="absolute border border-gray-500 opacity-30 rounded-full h-[200px] w-[200px] mt-64 md:mt:52 
-            animate-ping"
-            />
+            <div className="md:mt:52 absolute mt-64 h-[200px] w-[200px] animate-ping rounded-full border border-gray-500 opacity-30" />
             <div />
-            <div
-                className="absolute border border-gray-500 opacity-30 rounded-full h-[300px] w-[300px] mt-64 md:mt:52 
-            animate-ping"
-            />
+            <div className="md:mt:52 absolute mt-64 h-[300px] w-[300px] animate-ping rounded-full border border-gray-500 opacity-30" />
             <div />
-            <div
-                className="absolute border border-gray-500  opacity-30 rounded-full h-[500px] w-[500px] mt-64 md:mt:52 
-            animate-ping"
-            />
+            <div className="md:mt:52 absolute mt-64 h-[500px] w-[500px] animate-ping rounded-full border border-gray-500 opacity-30" />
             <div />
-            <div
-                className="absolute border border-green-500 opacity-20 h-[510px] w-[510px] md:h-[650px] md:w-[650px] 
-            animate-pulse mt-64 md:mt:52 rounded-full"
-            />
+            <div className="md:mt:52 absolute mt-64 h-[510px] w-[510px] animate-pulse rounded-full border border-green-500 opacity-20 md:h-[650px] md:w-[650px]" />
             <div />
-            <div
-                className="absolute border border-gray-500 opacity-30 rounded-full h-[800px] w-[800px] mt-64 md:mt:52 
-            animate-ping"
-            />
+            <div className="md:mt:52 absolute mt-64 h-[800px] w-[800px] animate-ping rounded-full border border-gray-500 opacity-30" />
             <div />
         </motion.div>
     );

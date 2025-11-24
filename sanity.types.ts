@@ -14,450 +14,466 @@
 
 // Source: schema.json
 export type Project = {
-  _id: string;
-  _type: "project";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  title?: string;
-  image?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    _id: string;
+    _type: "project";
+    _createdAt: string;
+    _updatedAt: string;
+    _rev: string;
+    title?: string;
+    image?: {
+        asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
     };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-  };
-  summary?: string;
-  technologies?: Array<{
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    _key: string;
-    [internalGroqTypeReferenceTo]?: "skill";
-  }>;
-  sourceCodeLink?: string;
-  liveLink?: string;
+    summary?: string;
+    technologies?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "skill";
+    }>;
+    sourceCodeLink?: string;
+    liveLink?: string;
 };
 
 export type SanityImageCrop = {
-  _type: "sanity.imageCrop";
-  top?: number;
-  bottom?: number;
-  left?: number;
-  right?: number;
+    _type: "sanity.imageCrop";
+    top?: number;
+    bottom?: number;
+    left?: number;
+    right?: number;
 };
 
 export type SanityImageHotspot = {
-  _type: "sanity.imageHotspot";
-  x?: number;
-  y?: number;
-  height?: number;
-  width?: number;
+    _type: "sanity.imageHotspot";
+    x?: number;
+    y?: number;
+    height?: number;
+    width?: number;
 };
 
 export type Skill = {
-  _id: string;
-  _type: "skill";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  title?: string;
-  progress?: number;
-  image?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    _id: string;
+    _type: "skill";
+    _createdAt: string;
+    _updatedAt: string;
+    _rev: string;
+    title?: string;
+    progress?: number;
+    image?: {
+        asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
     };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-  };
 };
 
 export type Experience = {
-  _id: string;
-  _type: "experience";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  jobTitle?: string;
-  companyImage?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    _id: string;
+    _type: "experience";
+    _createdAt: string;
+    _updatedAt: string;
+    _rev: string;
+    jobTitle?: string;
+    companyImage?: {
+        asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
     };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-  };
-  company?: string;
-  dateStarted?: string;
-  dateEnded?: string;
-  isCurrentlyWorkingHere?: boolean;
-  technologies?: Array<{
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    _key: string;
-    [internalGroqTypeReferenceTo]?: "skill";
-  }>;
-  points?: Array<string>;
+    company?: string;
+    dateStarted?: string;
+    dateEnded?: string;
+    isCurrentlyWorkingHere?: boolean;
+    technologies?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "skill";
+    }>;
+    points?: Array<string>;
 };
 
 export type PageInfo = {
-  _id: string;
-  _type: "pageInfo";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  name?: string;
-  role?: string;
-  heroImage?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    _id: string;
+    _type: "pageInfo";
+    _createdAt: string;
+    _updatedAt: string;
+    _rev: string;
+    name?: string;
+    role?: string;
+    heroImage?: {
+        asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
     };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-  };
-  backgroundInformation?: string;
-  profilePic?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    backgroundInformation?: string;
+    profilePic?: {
+        asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
     };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-  };
-  phoneNumber?: string;
-  email?: string;
-  address?: string;
-  socials?: Array<{
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    _key: string;
-    [internalGroqTypeReferenceTo]?: "social";
-  }>;
+    phoneNumber?: string;
+    email?: string;
+    address?: string;
+    socials?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "social";
+    }>;
 };
 
 export type Social = {
-  _id: string;
-  _type: "social";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  title?: string;
-  url?: string;
+    _id: string;
+    _type: "social";
+    _createdAt: string;
+    _updatedAt: string;
+    _rev: string;
+    title?: string;
+    url?: string;
 };
 
 export type SanityImagePaletteSwatch = {
-  _type: "sanity.imagePaletteSwatch";
-  background?: string;
-  foreground?: string;
-  population?: number;
-  title?: string;
+    _type: "sanity.imagePaletteSwatch";
+    background?: string;
+    foreground?: string;
+    population?: number;
+    title?: string;
 };
 
 export type SanityImagePalette = {
-  _type: "sanity.imagePalette";
-  darkMuted?: SanityImagePaletteSwatch;
-  lightVibrant?: SanityImagePaletteSwatch;
-  darkVibrant?: SanityImagePaletteSwatch;
-  vibrant?: SanityImagePaletteSwatch;
-  dominant?: SanityImagePaletteSwatch;
-  lightMuted?: SanityImagePaletteSwatch;
-  muted?: SanityImagePaletteSwatch;
+    _type: "sanity.imagePalette";
+    darkMuted?: SanityImagePaletteSwatch;
+    lightVibrant?: SanityImagePaletteSwatch;
+    darkVibrant?: SanityImagePaletteSwatch;
+    vibrant?: SanityImagePaletteSwatch;
+    dominant?: SanityImagePaletteSwatch;
+    lightMuted?: SanityImagePaletteSwatch;
+    muted?: SanityImagePaletteSwatch;
 };
 
 export type SanityImageDimensions = {
-  _type: "sanity.imageDimensions";
-  height?: number;
-  width?: number;
-  aspectRatio?: number;
+    _type: "sanity.imageDimensions";
+    height?: number;
+    width?: number;
+    aspectRatio?: number;
 };
 
 export type SanityImageMetadata = {
-  _type: "sanity.imageMetadata";
-  location?: Geopoint;
-  dimensions?: SanityImageDimensions;
-  palette?: SanityImagePalette;
-  lqip?: string;
-  blurHash?: string;
-  hasAlpha?: boolean;
-  isOpaque?: boolean;
+    _type: "sanity.imageMetadata";
+    location?: Geopoint;
+    dimensions?: SanityImageDimensions;
+    palette?: SanityImagePalette;
+    lqip?: string;
+    blurHash?: string;
+    hasAlpha?: boolean;
+    isOpaque?: boolean;
 };
 
 export type SanityFileAsset = {
-  _id: string;
-  _type: "sanity.fileAsset";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  originalFilename?: string;
-  label?: string;
-  title?: string;
-  description?: string;
-  altText?: string;
-  sha1hash?: string;
-  extension?: string;
-  mimeType?: string;
-  size?: number;
-  assetId?: string;
-  uploadId?: string;
-  path?: string;
-  url?: string;
-  source?: SanityAssetSourceData;
+    _id: string;
+    _type: "sanity.fileAsset";
+    _createdAt: string;
+    _updatedAt: string;
+    _rev: string;
+    originalFilename?: string;
+    label?: string;
+    title?: string;
+    description?: string;
+    altText?: string;
+    sha1hash?: string;
+    extension?: string;
+    mimeType?: string;
+    size?: number;
+    assetId?: string;
+    uploadId?: string;
+    path?: string;
+    url?: string;
+    source?: SanityAssetSourceData;
 };
 
 export type SanityAssetSourceData = {
-  _type: "sanity.assetSourceData";
-  name?: string;
-  id?: string;
-  url?: string;
+    _type: "sanity.assetSourceData";
+    name?: string;
+    id?: string;
+    url?: string;
 };
 
 export type SanityImageAsset = {
-  _id: string;
-  _type: "sanity.imageAsset";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  originalFilename?: string;
-  label?: string;
-  title?: string;
-  description?: string;
-  altText?: string;
-  sha1hash?: string;
-  extension?: string;
-  mimeType?: string;
-  size?: number;
-  assetId?: string;
-  uploadId?: string;
-  path?: string;
-  url?: string;
-  metadata?: SanityImageMetadata;
-  source?: SanityAssetSourceData;
+    _id: string;
+    _type: "sanity.imageAsset";
+    _createdAt: string;
+    _updatedAt: string;
+    _rev: string;
+    originalFilename?: string;
+    label?: string;
+    title?: string;
+    description?: string;
+    altText?: string;
+    sha1hash?: string;
+    extension?: string;
+    mimeType?: string;
+    size?: number;
+    assetId?: string;
+    uploadId?: string;
+    path?: string;
+    url?: string;
+    metadata?: SanityImageMetadata;
+    source?: SanityAssetSourceData;
 };
 
 export type Geopoint = {
-  _type: "geopoint";
-  lat?: number;
-  lng?: number;
-  alt?: number;
+    _type: "geopoint";
+    lat?: number;
+    lng?: number;
+    alt?: number;
 };
 
 export type Slug = {
-  _type: "slug";
-  current?: string;
-  source?: string;
+    _type: "slug";
+    current?: string;
+    source?: string;
 };
 
-export type AllSanitySchemaTypes = Project | SanityImageCrop | SanityImageHotspot | Skill | Experience | PageInfo | Social | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageMetadata | SanityFileAsset | SanityAssetSourceData | SanityImageAsset | Geopoint | Slug;
+export type AllSanitySchemaTypes =
+    | Project
+    | SanityImageCrop
+    | SanityImageHotspot
+    | Skill
+    | Experience
+    | PageInfo
+    | Social
+    | SanityImagePaletteSwatch
+    | SanityImagePalette
+    | SanityImageDimensions
+    | SanityImageMetadata
+    | SanityFileAsset
+    | SanityAssetSourceData
+    | SanityImageAsset
+    | Geopoint
+    | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./sanity/lib/queries.ts
 // Variable: SOCIALS_QUERY
 // Query: *[_type == 'social']
 export type SOCIALS_QUERYResult = Array<{
-  _id: string;
-  _type: "social";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  title?: string;
-  url?: string;
+    _id: string;
+    _type: "social";
+    _createdAt: string;
+    _updatedAt: string;
+    _rev: string;
+    title?: string;
+    url?: string;
 }>;
 // Variable: PAGE_INFO_QUERY
 // Query: *[_type == 'pageInfo'][0]
 export type PAGE_INFO_QUERYResult = {
-  _id: string;
-  _type: "pageInfo";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  name?: string;
-  role?: string;
-  heroImage?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    _id: string;
+    _type: "pageInfo";
+    _createdAt: string;
+    _updatedAt: string;
+    _rev: string;
+    name?: string;
+    role?: string;
+    heroImage?: {
+        asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
     };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-  };
-  backgroundInformation?: string;
-  profilePic?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    backgroundInformation?: string;
+    profilePic?: {
+        asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
     };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-  };
-  phoneNumber?: string;
-  email?: string;
-  address?: string;
-  socials?: Array<{
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    _key: string;
-    [internalGroqTypeReferenceTo]?: "social";
-  }>;
+    phoneNumber?: string;
+    email?: string;
+    address?: string;
+    socials?: Array<{
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        _key: string;
+        [internalGroqTypeReferenceTo]?: "social";
+    }>;
 } | null;
 // Variable: SKILLS_QUERY
 // Query: *[_type == 'skill']
 export type SKILLS_QUERYResult = Array<{
-  _id: string;
-  _type: "skill";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  title?: string;
-  progress?: number;
-  image?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    _id: string;
+    _type: "skill";
+    _createdAt: string;
+    _updatedAt: string;
+    _rev: string;
+    title?: string;
+    progress?: number;
+    image?: {
+        asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
     };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-  };
 }>;
 // Variable: PROJECTS_QUERY
 // Query: *[_type == 'project'] {        ...,        technologies[]->    }
 export type PROJECTS_QUERYResult = Array<{
-  _id: string;
-  _type: "project";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  title?: string;
-  image?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-  };
-  summary?: string;
-  technologies: Array<{
     _id: string;
-    _type: "skill";
+    _type: "project";
     _createdAt: string;
     _updatedAt: string;
     _rev: string;
     title?: string;
-    progress?: number;
     image?: {
-      asset?: {
-        _ref: string;
-        _type: "reference";
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-      };
-      media?: unknown;
-      hotspot?: SanityImageHotspot;
-      crop?: SanityImageCrop;
-      _type: "image";
+        asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
     };
-  }> | null;
-  sourceCodeLink?: string;
-  liveLink?: string;
+    summary?: string;
+    technologies: Array<{
+        _id: string;
+        _type: "skill";
+        _createdAt: string;
+        _updatedAt: string;
+        _rev: string;
+        title?: string;
+        progress?: number;
+        image?: {
+            asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            _type: "image";
+        };
+    }> | null;
+    sourceCodeLink?: string;
+    liveLink?: string;
 }>;
 // Variable: EXPERIENCES_QUERY
 // Query: *[_type == 'experience'] {        ...,        technologies[]->    }
 export type EXPERIENCES_QUERYResult = Array<{
-  _id: string;
-  _type: "experience";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  jobTitle?: string;
-  companyImage?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-  };
-  company?: string;
-  dateStarted?: string;
-  dateEnded?: string;
-  isCurrentlyWorkingHere?: boolean;
-  technologies: Array<{
     _id: string;
-    _type: "skill";
+    _type: "experience";
     _createdAt: string;
     _updatedAt: string;
     _rev: string;
-    title?: string;
-    progress?: number;
-    image?: {
-      asset?: {
-        _ref: string;
-        _type: "reference";
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-      };
-      media?: unknown;
-      hotspot?: SanityImageHotspot;
-      crop?: SanityImageCrop;
-      _type: "image";
+    jobTitle?: string;
+    companyImage?: {
+        asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
     };
-  }> | null;
-  points?: Array<string>;
+    company?: string;
+    dateStarted?: string;
+    dateEnded?: string;
+    isCurrentlyWorkingHere?: boolean;
+    technologies: Array<{
+        _id: string;
+        _type: "skill";
+        _createdAt: string;
+        _updatedAt: string;
+        _rev: string;
+        title?: string;
+        progress?: number;
+        image?: {
+            asset?: {
+                _ref: string;
+                _type: "reference";
+                _weak?: boolean;
+                [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+            };
+            media?: unknown;
+            hotspot?: SanityImageHotspot;
+            crop?: SanityImageCrop;
+            _type: "image";
+        };
+    }> | null;
+    points?: Array<string>;
 }>;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
-  interface SanityQueries {
-    "*[_type == 'social']": SOCIALS_QUERYResult;
-    "*[_type == 'pageInfo'][0]": PAGE_INFO_QUERYResult;
-    "*[_type == 'skill']": SKILLS_QUERYResult;
-    "\n    *[_type == 'project'] {\n        ...,\n        technologies[]->\n    }\n": PROJECTS_QUERYResult;
-    "\n    *[_type == 'experience'] {\n        ...,\n        technologies[]->\n    }\n": EXPERIENCES_QUERYResult;
-  }
+    interface SanityQueries {
+        "*[_type == 'social']": SOCIALS_QUERYResult;
+        "*[_type == 'pageInfo'][0]": PAGE_INFO_QUERYResult;
+        "*[_type == 'skill']": SKILLS_QUERYResult;
+        "\n    *[_type == 'project'] {\n        ...,\n        technologies[]->\n    }\n": PROJECTS_QUERYResult;
+        "\n    *[_type == 'experience'] {\n        ...,\n        technologies[]->\n    }\n": EXPERIENCES_QUERYResult;
+    }
 }

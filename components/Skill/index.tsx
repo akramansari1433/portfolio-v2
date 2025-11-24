@@ -15,12 +15,12 @@ export default function Skill({ directionLeft, skill }: Props) {
     return (
         <div className="group relative flex cursor-pointer">
             <motion.div
-                initial={{ y: -100 , opacity: 0 }}
+                initial={{ y: -100, opacity: 0 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
             >
                 <Image
-                    className="rounded-full p-1 border-2 border-green-500 object-contain w-16 h-16 md:w-20 md:h-20 filter group-hover:grayscale transition duration-300 ease-in-out"
+                    className="h-16 w-16 rounded-full border-2 border-green-500 object-contain p-1 filter transition duration-300 ease-in-out group-hover:grayscale md:h-20 md:w-20"
                     src={urlFor(skill?.image).url()}
                     alt={skill?.title || "Skill"}
                     height={100}
@@ -28,9 +28,11 @@ export default function Skill({ directionLeft, skill }: Props) {
                 />
             </motion.div>
 
-            <div className="absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-white w-16 h-16 md:w-20 md:h-20 rounded-full z-0">
-                <div className="flex items-center justify-center h-full">
-                    <p className="text-xl md:text-3xl font-bold text-black opacity-100">{skill?.progress}%</p>
+            <div className="absolute z-0 h-16 w-16 rounded-full opacity-0 transition duration-300 ease-in-out group-hover:bg-white group-hover:opacity-80 md:h-20 md:w-20">
+                <div className="flex h-full items-center justify-center">
+                    <p className="text-xl font-bold text-black opacity-100 md:text-3xl">
+                        {skill?.progress}%
+                    </p>
                 </div>
             </div>
         </div>

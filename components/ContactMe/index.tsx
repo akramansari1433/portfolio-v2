@@ -43,45 +43,46 @@ export default function ContactMe() {
     };
 
     return (
-        <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
-            <h3 className="absolute top-20 md:top-24 uppercase tracking-[20px] text-gray-700 dark:text-gray-200 text-xl md:text-2xl font-medium">
+        <div className="relative mx-auto flex h-screen max-w-7xl flex-col items-center justify-evenly px-10 text-center md:flex-row md:text-left">
+            <h3 className="absolute top-20 text-xl font-medium uppercase tracking-[20px] text-gray-700 dark:text-gray-200 md:top-24 md:text-2xl">
                 Contact
             </h3>
             <div className="flex flex-col space-y-4 md:space-y-5 lg:space-y-6 xl:space-y-6 2xl:space-y-10">
-                <p className="text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-semibold text-center dark:text-gray-200">
-                    I have got just what you need. <span className="decoration-green-500 underline">Lets talk.</span>
+                <p className="text-center text-xl font-semibold dark:text-gray-200 md:text-2xl lg:text-3xl 2xl:text-4xl">
+                    I have got just what you need.{" "}
+                    <span className="underline decoration-green-500">Lets talk.</span>
                 </p>
 
                 <form
                     onSubmit={handleSubmit(onSubmit)}
-                    className="flex flex-col items-center space-y-3 w-80 md:w-fit mx-auto"
+                    className="mx-auto flex w-80 flex-col items-center space-y-3 md:w-fit"
                 >
-                    <div className="md:flex md:space-x-2 space-y-3 md:space-y-0 ">
+                    <div className="space-y-3 md:flex md:space-x-2 md:space-y-0">
                         <input
                             {...register("name")}
                             placeholder="Name"
-                            className="outline-none bg-slate-400/20 dark:bg-slate-600/20 rounded-lg  px-6 py-3 text-gray-700 dark:text-gray-100 placeholder-gray-500 transition-all w-80 md:w-auto"
+                            className="w-80 rounded-lg bg-slate-400/20 px-6 py-3 text-gray-700 placeholder-gray-500 outline-none transition-all dark:bg-slate-600/20 dark:text-gray-100 md:w-auto"
                             type="text"
                         />{" "}
                         <input
                             {...register("email")}
                             placeholder="Email"
-                            className="outline-none bg-slate-400/20 dark:bg-slate-600/20 rounded-lg  px-6 py-3 md:py-4  text-gray-700 dark:text-gray-100 placeholder-gray-500 transition-all focus:border-darkGreen/20 focus:text-darkGreen/80 hover:border-darkGreen/20 w-80 md:w-auto"
+                            className="focus:border-darkGreen/20 focus:text-darkGreen/80 hover:border-darkGreen/20 w-80 rounded-lg bg-slate-400/20 px-6 py-3 text-gray-700 placeholder-gray-500 outline-none transition-all dark:bg-slate-600/20 dark:text-gray-100 md:w-auto md:py-4"
                             type="email"
                         />
                     </div>
                     <input
                         {...register("subject")}
                         placeholder="Subject"
-                        className="outline-none w-full bg-slate-400/20 dark:bg-slate-600/20 rounded-lg  px-6 py-3 md:py-4  text-gray-700 dark:text-gray-100 placeholder-gray-500 transition-all focus:border-darkGreen/20 focus:text-darkGreen/80 hover:border-darkGreen/20 "
+                        className="focus:border-darkGreen/20 focus:text-darkGreen/80 hover:border-darkGreen/20 w-full rounded-lg bg-slate-400/20 px-6 py-3 text-gray-700 placeholder-gray-500 outline-none transition-all dark:bg-slate-600/20 dark:text-gray-100 md:py-4"
                         type="text"
                     />
                     <textarea
                         {...register("message")}
                         placeholder="Message"
-                        className="outline-none w-full bg-slate-400/20 dark:bg-slate-600/20 rounded-lg  px-6 py-3 md:py-4 text-gray-700 dark:text-gray-100 placeholder-gray-500 transition-all focus:border-darkGreen/20 focus:text-darkGreen/80 hover:border-darkGreen/20"
+                        className="focus:border-darkGreen/20 focus:text-darkGreen/80 hover:border-darkGreen/20 w-full rounded-lg bg-slate-400/20 px-6 py-3 text-gray-700 placeholder-gray-500 outline-none transition-all dark:bg-slate-600/20 dark:text-gray-100 md:py-4"
                     />
-                    <button className="bg-green-700 dark:bg-green-800 w-fit py-2  px-5 rounded-lg text-white font-bold text-lg">
+                    <button className="w-fit rounded-lg bg-green-700 px-5 py-2 text-lg font-bold text-white dark:bg-green-800">
                         {isSubmitting ? "Sending..." : "Send"}
                     </button>
                 </form>

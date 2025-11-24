@@ -10,12 +10,16 @@ type Props = { experience: EXPERIENCES_QUERYResult[0] };
 
 export default function ExperienceCard({ experience }: Props) {
     return (
-        <article className="flex drop-shadow-xl flex-col rounded-3xl items-center flex-shrink-0 w-72  md:w-[600px] xl:w-[700px] snap-center bg-gradient-to-tr from-gray-200 dark:from-gray-600  to-green-500/40 dark:to-green-600/20 p-5 md:p-8">
+        <article className="flex w-72 flex-shrink-0 snap-center flex-col items-center rounded-3xl bg-gradient-to-tr from-gray-200 to-green-500/40 p-5 drop-shadow-xl dark:from-gray-600 dark:to-green-600/20 md:w-[600px] md:p-8 xl:w-[700px]">
             <div className="flex flex-col-reverse items-center md:flex-row md:items-start">
                 <div className="mt-5 w-full px-0 md:px-10">
-                    <p className="text-lg md:text-2xl font-light dark:text-white">{experience?.jobTitle}</p>
-                    <p className="font-bold text-md md:text-2xl mt-1 dark:text-white">{experience?.company}</p>
-                    <div className="flex overflow-auto scrollbar-none space-x-2 my-2">
+                    <p className="text-lg font-light dark:text-white md:text-2xl">
+                        {experience?.jobTitle}
+                    </p>
+                    <p className="text-md mt-1 font-bold dark:text-white md:text-2xl">
+                        {experience?.company}
+                    </p>
+                    <div className="my-2 flex space-x-2 overflow-auto scrollbar-none">
                         {experience?.technologies?.map((technology) => (
                             <Image
                                 key={technology._id}
@@ -27,9 +31,13 @@ export default function ExperienceCard({ experience }: Props) {
                             />
                         ))}
                     </div>
-                    <p className="uppercase py-2 md:py-3 text-gray-600 dark:text-gray-300 text-sm md:text-lg">
-                        {experience?.dateStarted && new Date(experience.dateStarted).toDateString()} -{" "}
-                        {experience?.isCurrentlyWorkingHere ? "Present" : experience?.dateEnded && new Date(experience.dateEnded).toDateString()}
+                    <p className="py-2 text-sm uppercase text-gray-600 dark:text-gray-300 md:py-3 md:text-lg">
+                        {experience?.dateStarted && new Date(experience.dateStarted).toDateString()}{" "}
+                        -{" "}
+                        {experience?.isCurrentlyWorkingHere
+                            ? "Present"
+                            : experience?.dateEnded &&
+                              new Date(experience.dateEnded).toDateString()}
                     </p>
                 </div>
                 <motion.div
@@ -38,7 +46,7 @@ export default function ExperienceCard({ experience }: Props) {
                     transition={{ duration: 1.2 }}
                 >
                     <Image
-                        className="w-24 md:w-32 lg:w-36 h-auto rounded-full object-cover object-center"
+                        className="h-auto w-24 rounded-full object-cover object-center md:w-32 lg:w-36"
                         src={urlFor(experience?.companyImage).url()}
                         alt={experience?.company || "Company"}
                         height={150}
@@ -47,8 +55,10 @@ export default function ExperienceCard({ experience }: Props) {
                 </motion.div>
             </div>
 
-            <ul className="px-5 md:px-10 list-disc dark:text-white space-y-1 text-sm md:text-lg overflow-y-scroll">
-                {experience?.points?.map((point, i) => <li key={i}>{point}</li>)}
+            <ul className="list-disc space-y-1 overflow-y-scroll px-5 text-sm dark:text-white md:px-10 md:text-lg">
+                {experience?.points?.map((point, i) => (
+                    <li key={i}>{point}</li>
+                ))}
             </ul>
         </article>
     );

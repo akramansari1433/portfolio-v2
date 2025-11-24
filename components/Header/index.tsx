@@ -20,7 +20,7 @@ export default function Header({ socials }: Props) {
     };
 
     return (
-        <header className="sticky top-0 z-20 mx-auto flex max-w-7xl items-center justify-between p-5 ">
+        <header className="sticky top-0 z-20 mx-auto flex max-w-7xl items-center justify-between p-5">
             <motion.div
                 initial={{
                     x: -500,
@@ -35,7 +35,7 @@ export default function Header({ socials }: Props) {
                 transition={{
                     duration: 1.5,
                 }}
-                className=" flex flex-row items-center"
+                className="flex flex-row items-center"
             >
                 {/* React social icons */}
                 {socials.map((social, idx) => (
@@ -49,17 +49,17 @@ export default function Header({ socials }: Props) {
                 <button
                     id="get-in-touch-button"
                     aria-label="Get in touch"
-                    className="flex  flex-row items-center "
+                    className="flex flex-row items-center"
                     onClick={scrollToContact}
                 >
                     <SocialIcon
-                        role='button'
+                        role="button"
                         className="cursor-pointer"
                         network="email"
                         fgColor={theme === "dark" ? "white" : "#4b5563"}
                         bgColor="transparent"
                     />
-                    <p className="uppercase hidden md:inline-flex text-sm text-gray-600 dark:text-gray-200">
+                    <p className="hidden text-sm uppercase text-gray-600 dark:text-gray-200 md:inline-flex">
                         Get in touch
                     </p>
                 </button>
@@ -83,10 +83,14 @@ export default function Header({ socials }: Props) {
                 <button
                     id="toggle-theme"
                     aria-label="Toggle Theme"
-                    className="border-2 p-1 border-gray-400 rounded-full text-gray-600 dark:text-white"
+                    className="rounded-full border-2 border-gray-400 p-1 text-gray-600 dark:text-white"
                     onClick={() => (theme === "light" ? setTheme("dark") : setTheme("light"))}
                 >
-                    {theme === "dark" ? <SunIcon className="h-6 w-6" /> : <MoonIcon className="h-6 w-6" />}
+                    {theme === "dark" ? (
+                        <SunIcon className="h-6 w-6" />
+                    ) : (
+                        <MoonIcon className="h-6 w-6" />
+                    )}
                 </button>
             </motion.div>
         </header>

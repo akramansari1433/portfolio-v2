@@ -13,14 +13,16 @@ export default function WorkExperience({ experiences }: Props) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
-            className="h-screen flex relative overflow-hidden flex-col text-left md:flex-row max-w-full px-10 justify-evenly mx-auto items-center"
+            className="relative mx-auto flex h-screen max-w-full flex-col items-center justify-evenly overflow-hidden px-10 text-left md:flex-row"
         >
-            <h3 className="absolute top-20 md:top-24 uppercase tracking-[20px] text-gray-700 dark:text-gray-200 text-xl md:text-2xl font-medium">
+            <h3 className="absolute top-20 text-xl font-medium uppercase tracking-[20px] text-gray-700 dark:text-gray-200 md:top-24 md:text-2xl">
                 Experience
             </h3>
 
-            <div className="w-screen md:w-full h-flex max-h-[75%] flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar-thin">
-                {experiences?.map((experience) => <ExperienceCard key={experience._id} experience={experience} />)}
+            <div className="h-flex flex max-h-[75%] w-screen snap-x snap-mandatory space-x-5 overflow-x-scroll p-10 scrollbar-thin md:w-full">
+                {experiences?.map((experience) => (
+                    <ExperienceCard key={experience._id} experience={experience} />
+                ))}
             </div>
         </motion.div>
     );

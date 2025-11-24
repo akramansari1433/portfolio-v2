@@ -56,10 +56,7 @@ export default async function Home() {
     }
 
     return (
-        <div
-            className="bg-gray-200 dark:bg-gray-900 text-black h-screen snap-y snap-mandatory
-            overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-darkGreen/80"
-        >
+        <div className="scrollbar-thumb-darkGreen/80 z-0 h-screen snap-y snap-mandatory overflow-x-hidden overflow-y-scroll bg-gray-200 text-black scrollbar-thin scrollbar-track-gray-400/20 dark:bg-gray-900">
             <Header socials={socials} />
 
             {/* Hero */}
@@ -97,9 +94,9 @@ export default async function Home() {
                     <Link
                         aria-label="Home"
                         href="#hero"
-                        className="p-2 border bg-gray-600 dark:bg-transparent rounded-full"
+                        className="rounded-full border bg-gray-600 p-2 dark:bg-transparent"
                     >
-                        <ChevronUpIcon className="h-6 w-6 text-white animate-pulse" />
+                        <ChevronUpIcon className="h-6 w-6 animate-pulse text-white" />
                     </Link>
                 </div>
             </footer>

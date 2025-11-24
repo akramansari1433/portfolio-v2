@@ -25,11 +25,11 @@ export default function Hero({ pageInfo }: Props) {
     });
 
     return (
-        <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
+        <div className="flex h-screen flex-col items-center justify-center space-y-8 overflow-hidden text-center">
             <BackgroundCircles />
 
             <Image
-                className="relative rounded-full h-32 w-32 mx-auto object-cover"
+                className="relative mx-auto h-32 w-32 rounded-full object-cover"
                 src={urlFor(pageInfo?.heroImage).url()}
                 alt="Hero Image"
                 height={500}
@@ -38,32 +38,32 @@ export default function Hero({ pageInfo }: Props) {
             />
 
             <div className="z-20">
-                <h1 className="text-sm font-medium uppercase text-gray-600 dark:text-gray-200 pb-2 tracking-[10px] md:tracking-[15px]">
+                <h1 className="pb-2 text-sm font-medium uppercase tracking-[10px] text-gray-600 dark:text-gray-200 md:tracking-[15px]">
                     {pageInfo?.role}
                 </h1>
-                <p className="text-xl md:text-4xl font-semibold px-10 dark:text-white">
+                <p className="px-10 text-xl font-semibold dark:text-white md:text-4xl">
                     <span className="mr-3">{text}</span>
                     <Cursor cursorColor="green" />
                 </p>
 
                 <div className="pt-5">
                     <Link href="#about">
-                        <button className="px-6 font-semibold rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 dark:text-gray-200 hover:border-gray-600">
+                        <button className="rounded-full border border-transparent px-6 py-2 text-sm font-semibold uppercase tracking-widest text-gray-700 hover:border-gray-600 dark:text-gray-200">
                             About
                         </button>
                     </Link>
                     <Link href="#experience">
-                        <button className="px-6 font-semibold rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 dark:text-gray-200 hover:border-gray-600">
+                        <button className="rounded-full border border-transparent px-6 py-2 text-sm font-semibold uppercase tracking-widest text-gray-700 hover:border-gray-600 dark:text-gray-200">
                             Experience
                         </button>
                     </Link>
                     <Link href="#skills">
-                        <button className="px-6 font-semibold rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 dark:text-gray-200 hover:border-gray-600 ">
+                        <button className="rounded-full border border-transparent px-6 py-2 text-sm font-semibold uppercase tracking-widest text-gray-700 hover:border-gray-600 dark:text-gray-200">
                             Skills
                         </button>
                     </Link>
                     <Link href="#projects">
-                        <button className="px-6 font-semibold rounded-full py-2 text-sm uppercase border border-transparent tracking-widest text-gray-700 dark:text-gray-200 hover:border-gray-600">
+                        <button className="rounded-full border border-transparent px-6 py-2 text-sm font-semibold uppercase tracking-widest text-gray-700 hover:border-gray-600 dark:text-gray-200">
                             Projects
                         </button>
                     </Link>
