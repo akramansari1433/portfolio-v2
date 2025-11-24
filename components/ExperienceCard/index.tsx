@@ -1,3 +1,5 @@
+"use client";
+
 import { urlForImage } from "@/sanity/lib/image";
 import { motion } from "framer-motion";
 import Image from "next/image";

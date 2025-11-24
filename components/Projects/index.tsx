@@ -1,3 +1,5 @@
+"use client";
+
 import { urlForImage } from "@/sanity/lib/image";
 import { ArrowTopRightOnSquareIcon, ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";

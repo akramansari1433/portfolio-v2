@@ -1,7 +1,8 @@
+"use client";
+
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
-import { useRouter } from "next/router";
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 
@@ -11,7 +12,12 @@ type Props = {
 
 export default function Header({ socials }: Props) {
     const { theme, setTheme } = useTheme();
-    const router = useRouter();
+
+    const scrollToContact = () => {
+        const contactSection = document.getElementById("contact");
+        contactSection?.scrollIntoView({ behavior: "smooth" });
+    };
+
     return (
         <header className="sticky top-0 z-20 mx-auto flex max-w-7xl items-center justify-between p-5 ">
             <motion.div
@@ -43,7 +49,7 @@ export default function Header({ socials }: Props) {
                     id="get-in-touch-button"
                     aria-label="Get in touch"
                     className="flex  flex-row items-center "
-                    onClick={() => router.push("#contact")}
+                    onClick={scrollToContact}
                 >
                     <SocialIcon
                         role='button'
