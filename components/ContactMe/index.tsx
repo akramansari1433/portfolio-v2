@@ -13,13 +13,7 @@ export default function ContactMe() {
         formState: { errors, isSubmitting },
     } = useForm<ContactFormData>({
         resolver: zodResolver(contactFormSchema),
-        defaultValues: {
-            name: "",
-            email: "",
-            subject: "",
-            message: "",
-            website: "",
-        },
+        defaultValues: { name: "", email: "", subject: "", message: "", website: "" },
     });
 
     const onSubmit: SubmitHandler<ContactFormData> = async (formData) => {
@@ -31,9 +25,7 @@ export default function ContactMe() {
 
         const response = await fetch("/api/send-email", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),
         });
 
@@ -66,11 +58,13 @@ export default function ContactMe() {
                             <input
                                 {...register("name")}
                                 placeholder="Name"
-                                className="w-80 rounded-lg bg-slate-400/20 px-6 py-3 text-gray-700 placeholder-gray-500 outline-none transition-all dark:bg-slate-600/20 dark:text-gray-100 md:w-auto"
+                                className="w-80 rounded-lg bg-slate-400/20 px-6 py-3 text-gray-700 placeholder-gray-500 outline-none transition-all dark:bg-slate-600/20 dark:text-gray-100 md:w-auto md:py-4"
                                 type="text"
                             />
                             {errors.name && (
-                                <span className="mt-1 text-sm text-red-500">{errors.name.message}</span>
+                                <span className="mt-1 text-sm text-red-500">
+                                    {errors.name.message}
+                                </span>
                             )}
                         </div>
                         <div className="flex flex-col">
@@ -81,7 +75,9 @@ export default function ContactMe() {
                                 type="email"
                             />
                             {errors.email && (
-                                <span className="mt-1 text-sm text-red-500">{errors.email.message}</span>
+                                <span className="mt-1 text-sm text-red-500">
+                                    {errors.email.message}
+                                </span>
                             )}
                         </div>
                     </div>
@@ -93,7 +89,9 @@ export default function ContactMe() {
                             type="text"
                         />
                         {errors.subject && (
-                            <span className="mt-1 text-sm text-red-500">{errors.subject.message}</span>
+                            <span className="mt-1 text-sm text-red-500">
+                                {errors.subject.message}
+                            </span>
                         )}
                     </div>
                     <div className="w-full">
@@ -103,7 +101,9 @@ export default function ContactMe() {
                             className="focus:border-darkGreen/20 focus:text-darkGreen/80 hover:border-darkGreen/20 w-full rounded-lg bg-slate-400/20 px-6 py-3 text-gray-700 placeholder-gray-500 outline-none transition-all dark:bg-slate-600/20 dark:text-gray-100 md:py-4"
                         />
                         {errors.message && (
-                            <span className="mt-1 text-sm text-red-500">{errors.message.message}</span>
+                            <span className="mt-1 text-sm text-red-500">
+                                {errors.message.message}
+                            </span>
                         )}
                     </div>
                     {/* Honeypot field - hidden from users but visible to bots */}
