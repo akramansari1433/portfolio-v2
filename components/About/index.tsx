@@ -1,12 +1,12 @@
 "use client";
 
-import { urlForImage } from "@/sanity/lib/image";
+import { urlFor } from "@/sanity/lib/image";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
-import type { PageInfoQueryResult } from "@/sanity.types";
+import type { PAGE_INFO_QUERYResult } from "@/sanity.types";
 
-type Props = { pageInfo: NonNullable<PageInfoQueryResult> };
+type Props = { pageInfo: NonNullable<PAGE_INFO_QUERYResult> };
 
 export default function About({ pageInfo }: Props) {
     return (
@@ -37,7 +37,7 @@ export default function About({ pageInfo }: Props) {
             >
                 <Image
                     className="w-52 md:w-64 rounded-full md:rounded-lg aspect-square"
-                    src={urlForImage(pageInfo?.profilePic).url()}
+                    src={urlFor(pageInfo?.profilePic).url()}
                     alt={pageInfo?.name || "Profile"}
                     height={256}
                     width={256}

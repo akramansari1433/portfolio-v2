@@ -1,13 +1,13 @@
 "use client";
 
-import { urlForImage } from "@/sanity/lib/image";
+import { urlFor } from "@/sanity/lib/image";
 import { ArrowTopRightOnSquareIcon, ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
-import type { ProjectQueryResult } from "@/sanity.types";
+import type { PROJECTS_QUERYResult } from "@/sanity.types";
 
-type Props = { projects: ProjectQueryResult };
+type Props = { projects: PROJECTS_QUERYResult };
 
 export default function Projects({ projects }: Props) {
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -56,7 +56,7 @@ export default function Projects({ projects }: Props) {
                         >
                             <Image
                                 className="h-36 md:h-64 w-auto object-scale-down"
-                                src={urlForImage(project?.image).url()}
+                                src={urlFor(project?.image).url()}
                                 alt="Project Image"
                                 height={500}
                                 width={500}
@@ -72,7 +72,7 @@ export default function Projects({ projects }: Props) {
                                     <Image
                                         key={technology._id}
                                         className="h-8 w-8 lg:h-10 lg:w-10 object-cover"
-                                        src={urlForImage(technology?.image).url()}
+                                        src={urlFor(technology?.image).url()}
                                         alt={technology?.title || "Technology"}
                                         height={100}
                                         width={100}

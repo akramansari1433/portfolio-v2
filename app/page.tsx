@@ -6,50 +6,26 @@ import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import WorkExperience from "@/components/WorkExperience";
 import { client } from "@/sanity/lib/client";
+import {
+    EXPERIENCES_QUERY,
+    PAGE_INFO_QUERY,
+    PROJECTS_QUERY,
+    SKILLS_QUERY,
+    SOCIALS_QUERY,
+} from "@/sanity/lib/queries";
 import { ChevronUpIcon } from "@heroicons/react/24/solid";
-import { groq } from "next-sanity";
 import Link from "next/link";
-import type {
-    SocialsQueryResult,
-    PageInfoQueryResult,
-    SkillQueryResult,
-    ProjectQueryResult,
-    ExperienceQueryResult,
-} from "@/sanity.types";
 
 export const revalidate = 30;
 
 async function getPageData() {
-    const socialsQuery = groq`
-    *[_type == 'social']`;
-
-    const pageInfoQuery = groq`
-    *[_type == 'pageInfo'][0]
-    `;
-
-    const skillQuery = groq`
-    *[_type == 'skill']
-    `;
-
-    const projectQuery = groq`
-    *[_type == 'project'] {
-      ...,
-      technologies[]->
-    }
-    `;
-
-    const experienceQuery = groq`
-    *[_type == 'experience'] {
-      ...,
-      technologies[]->
-    }
-    `;
-
-    const socials: SocialsQueryResult = await client.fetch(socialsQuery);
-    const experiences: ExperienceQueryResult = await client.fetch(experienceQuery);
-    const skills: SkillQueryResult = await client.fetch(skillQuery);
-    const projects: ProjectQueryResult = await client.fetch(projectQuery);
-    const pageInfo: PageInfoQueryResult = await client.fetch(pageInfoQuery);
+    const [socials, experiences, skills, projects, pageInfo] = await Promise.all([
+        client.fetch(SOCIALS_QUERY),
+        client.fetch(EXPERIENCES_QUERY),
+        client.fetch(SKILLS_QUERY),
+        client.fetch(PROJECTS_QUERY),
+        client.fetch(PAGE_INFO_QUERY),
+    ]);
 
     return {
         pageInfo,

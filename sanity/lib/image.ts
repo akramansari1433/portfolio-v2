@@ -1,11 +1,15 @@
+import createImageUrlBuilder from "@sanity/image-url";
+import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
+
 import { client } from "./client";
-import imageUrlBuilder from "@sanity/image-url";
 
-const builder = imageUrlBuilder(client);
+// https://www.sanity.io/docs/image-url
+const imageBuilder = createImageUrlBuilder(client);
 
-export function urlForImage(source: any) {
-    if (!source?.asset?._ref) {
-        return builder.image({ _type: "image", asset: { _type: "reference", _ref: "" } });
+export const urlFor = (source: SanityImageSource | undefined) => {
+    if (!source) {
+        // Return a placeholder or empty image builder
+        return imageBuilder.image({ _type: "image", asset: { _type: "reference", _ref: "" } });
     }
-    return builder.image(source).auto("format").fit("max");
-}
+    return imageBuilder.image(source);
+};

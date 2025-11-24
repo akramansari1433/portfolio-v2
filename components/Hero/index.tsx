@@ -5,10 +5,10 @@ import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
 import Image from "next/image";
-import { urlForImage } from "@/sanity/lib/image";
-import type { PageInfoQueryResult } from "@/sanity.types";
+import { urlFor } from "@/sanity/lib/image";
+import type { PAGE_INFO_QUERYResult } from "@/sanity.types";
 
-type Props = { pageInfo: NonNullable<PageInfoQueryResult> };
+type Props = { pageInfo: NonNullable<PAGE_INFO_QUERYResult> };
 
 export default function Hero({ pageInfo }: Props) {
     const [text, count] = useTypewriter({
@@ -30,7 +30,7 @@ export default function Hero({ pageInfo }: Props) {
 
             <Image
                 className="relative rounded-full h-32 w-32 mx-auto object-cover"
-                src={urlForImage(pageInfo?.heroImage).url()}
+                src={urlFor(pageInfo?.heroImage).url()}
                 alt="Hero Image"
                 height={500}
                 width={500}

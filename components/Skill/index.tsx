@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { urlForImage } from "@/sanity/lib/image";
+import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import type { Skill } from "@/sanity.types";
 
@@ -21,7 +21,7 @@ export default function Skill({ directionLeft, skill }: Props) {
             >
                 <Image
                     className="rounded-full p-1 border-2 border-green-500 object-contain w-16 h-16 md:w-20 md:h-20 filter group-hover:grayscale transition duration-300 ease-in-out"
-                    src={urlForImage(skill?.image).url()}
+                    src={urlFor(skill?.image).url()}
                     alt={skill?.title || "Skill"}
                     height={100}
                     width={100}

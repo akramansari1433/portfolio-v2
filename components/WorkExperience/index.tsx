@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 import React from "react";
 import ExperienceCard from "../ExperienceCard";
-import type { ExperienceQueryResult } from "@/sanity.types";
+import type { EXPERIENCES_QUERYResult } from "@/sanity.types";
 
-type Props = { experiences: ExperienceQueryResult };
+type Props = { experiences: EXPERIENCES_QUERYResult };
 
 export default function WorkExperience({ experiences }: Props) {
     return (

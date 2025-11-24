@@ -1,12 +1,12 @@
 "use client";
 
-import { urlForImage } from "@/sanity/lib/image";
+import { urlFor } from "@/sanity/lib/image";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
-import type { ExperienceQueryResult } from "@/sanity.types";
+import type { EXPERIENCES_QUERYResult } from "@/sanity.types";
 
-type Props = { experience: ExperienceQueryResult[0] };
+type Props = { experience: EXPERIENCES_QUERYResult[0] };
 
 export default function ExperienceCard({ experience }: Props) {
     return (
@@ -20,7 +20,7 @@ export default function ExperienceCard({ experience }: Props) {
                             <Image
                                 key={technology._id}
                                 className="h-10 w-10 object-cover"
-                                src={urlForImage(technology?.image).url()}
+                                src={urlFor(technology?.image).url()}
                                 alt={technology?.title || "Technology"}
                                 height={100}
                                 width={100}
@@ -39,7 +39,7 @@ export default function ExperienceCard({ experience }: Props) {
                 >
                     <Image
                         className="w-24 md:w-32 lg:w-36 h-auto rounded-full object-cover object-center"
-                        src={urlForImage(experience?.companyImage).url()}
+                        src={urlFor(experience?.companyImage).url()}
                         alt={experience?.company || "Company"}
                         height={150}
                         width={150}

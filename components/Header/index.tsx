@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import React from "react";
 import { SocialIcon } from "react-social-icons";
-import type { SocialsQueryResult } from "@/sanity.types";
+import type { SOCIALS_QUERYResult } from "@/sanity.types";
 
 type Props = {
-    socials: SocialsQueryResult;
+    socials: SOCIALS_QUERYResult;
 };
 
 export default function Header({ socials }: Props) {
