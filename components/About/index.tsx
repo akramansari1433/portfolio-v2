@@ -4,8 +4,9 @@ import { urlForImage } from "@/sanity/lib/image";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
+import type { PageInfoQueryResult } from "@/sanity.types";
 
-type Props = { pageInfo: PageInfo };
+type Props = { pageInfo: NonNullable<PageInfoQueryResult> };
 
 export default function About({ pageInfo }: Props) {
     return (
@@ -36,8 +37,8 @@ export default function About({ pageInfo }: Props) {
             >
                 <Image
                     className="w-52 md:w-64 rounded-full md:rounded-lg aspect-square"
-                    src={urlForImage(pageInfo.profilePic.asset).url()}
-                    alt={pageInfo.name}
+                    src={urlForImage(pageInfo?.profilePic).url()}
+                    alt={pageInfo?.name || "Profile"}
                     height={256}
                     width={256}
                     priority
@@ -48,7 +49,7 @@ export default function About({ pageInfo }: Props) {
                     Here is a <span className=" underline decoration-green-500">little</span> background
                 </p>
                 <p className="text-sm md:text-lg lg:text-lg text-justify dark:text-gray-300">
-                    {pageInfo.backgroundInformation}
+                    {pageInfo?.backgroundInformation}
                 </p>
             </div>
         </motion.div>

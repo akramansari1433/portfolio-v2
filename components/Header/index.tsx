@@ -5,9 +5,10 @@ import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import React from "react";
 import { SocialIcon } from "react-social-icons";
+import type { SocialsQueryResult } from "@/sanity.types";
 
 type Props = {
-    socials: Social[];
+    socials: SocialsQueryResult;
 };
 
 export default function Header({ socials }: Props) {
@@ -40,7 +41,7 @@ export default function Header({ socials }: Props) {
                 {socials.map((social, idx) => (
                     <SocialIcon
                         key={idx}
-                        url={social.url}
+                        url={social?.url}
                         fgColor={theme === "dark" ? "white" : "#4b5563"}
                         bgColor="transparent"
                     />

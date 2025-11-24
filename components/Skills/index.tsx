@@ -3,8 +3,9 @@
 import { motion } from "framer-motion";
 import React from "react";
 import Skill from "../Skill";
+import type { SkillQueryResult } from "@/sanity.types";
 
-type Props = { skills: Skill[] };
+type Props = { skills: SkillQueryResult };
 
 export default function Skills({ skills }: Props) {
     return (

@@ -9,6 +9,13 @@ import { client } from "@/sanity/lib/client";
 import { ChevronUpIcon } from "@heroicons/react/24/solid";
 import { groq } from "next-sanity";
 import Link from "next/link";
+import type {
+    SocialsQueryResult,
+    PageInfoQueryResult,
+    SkillQueryResult,
+    ProjectQueryResult,
+    ExperienceQueryResult,
+} from "@/sanity.types";
 
 export const revalidate = 30;
 
@@ -38,11 +45,11 @@ async function getPageData() {
     }
     `;
 
-    const socials: Social[] = await client.fetch(socialsQuery);
-    const experiences: Experience[] = await client.fetch(experienceQuery);
-    const skills: Skill[] = await client.fetch(skillQuery);
-    const projects: Project[] = await client.fetch(projectQuery);
-    const pageInfo: PageInfo = await client.fetch(pageInfoQuery);
+    const socials: SocialsQueryResult = await client.fetch(socialsQuery);
+    const experiences: ExperienceQueryResult = await client.fetch(experienceQuery);
+    const skills: SkillQueryResult = await client.fetch(skillQuery);
+    const projects: ProjectQueryResult = await client.fetch(projectQuery);
+    const pageInfo: PageInfoQueryResult = await client.fetch(pageInfoQuery);
 
     return {
         pageInfo,
@@ -57,7 +64,7 @@ export async function generateMetadata() {
     const { pageInfo } = await getPageData();
 
     return {
-        title: pageInfo.name,
+        title: pageInfo?.name || "Portfolio",
         description: "Portfolio",
         openGraph: {
             title: "Portfolio",
@@ -67,6 +74,10 @@ export async function generateMetadata() {
 
 export default async function Home() {
     const { pageInfo, experiences, projects, skills, socials } = await getPageData();
+
+    if (!pageInfo) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div

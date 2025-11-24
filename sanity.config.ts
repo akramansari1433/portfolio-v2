@@ -11,4 +11,10 @@ export default defineConfig({
     dataset,
     schema,
     plugins: [structureTool(), visionTool({ defaultApiVersion: apiVersion })],
+    experimental: {
+        typegen: {
+            enabled: true,
+            schemaTypes: "sanity.types.ts",
+        },
+    },
 });

@@ -6,8 +6,9 @@ import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
 import Image from "next/image";
 import { urlForImage } from "@/sanity/lib/image";
+import type { PageInfoQueryResult } from "@/sanity.types";
 
-type Props = { pageInfo: PageInfo };
+type Props = { pageInfo: NonNullable<PageInfoQueryResult> };
 
 export default function Hero({ pageInfo }: Props) {
     const [text, count] = useTypewriter({
@@ -29,7 +30,7 @@ export default function Hero({ pageInfo }: Props) {
 
             <Image
                 className="relative rounded-full h-32 w-32 mx-auto object-cover"
-                src={urlForImage(pageInfo?.heroImage.asset).url()}
+                src={urlForImage(pageInfo?.heroImage).url()}
                 alt="Hero Image"
                 height={500}
                 width={500}
@@ -38,7 +39,7 @@ export default function Hero({ pageInfo }: Props) {
 
             <div className="z-20">
                 <h1 className="text-sm font-medium uppercase text-gray-600 dark:text-gray-200 pb-2 tracking-[10px] md:tracking-[15px]">
-                    {pageInfo.role}
+                    {pageInfo?.role}
                 </h1>
                 <p className="text-xl md:text-4xl font-semibold px-10 dark:text-white">
                     <span className="mr-3">{text}</span>

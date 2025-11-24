@@ -5,8 +5,9 @@ import { ArrowTopRightOnSquareIcon, ChevronLeftIcon, ChevronRightIcon } from "@h
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
+import type { ProjectQueryResult } from "@/sanity.types";
 
-type Props = { projects: Project[] };
+type Props = { projects: ProjectQueryResult };
 
 export default function Projects({ projects }: Props) {
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -55,7 +56,7 @@ export default function Projects({ projects }: Props) {
                         >
                             <Image
                                 className="h-36 md:h-64 w-auto object-scale-down"
-                                src={urlForImage(project.image.asset).url()}
+                                src={urlForImage(project?.image).url()}
                                 alt="Project Image"
                                 height={500}
                                 width={500}
@@ -64,22 +65,22 @@ export default function Projects({ projects }: Props) {
 
                         <div className="space-y-5 px-0 md:px-10 md:w-1/2 max-w-3xl">
                             <p className="text-lg md:text-2xl lg:text-3xl font-semibold text-center dark:text-gray-200">
-                                {project.title}
+                                {project?.title}
                             </p>
                             <div className="flex items-center gap-x-5 justify-center">
-                                {project?.technologies.map((technology) => (
+                                {project?.technologies?.map((technology) => (
                                     <Image
                                         key={technology._id}
                                         className="h-8 w-8 lg:h-10 lg:w-10 object-cover"
-                                        src={urlForImage(technology?.image.asset).url()}
-                                        alt={technology.title}
+                                        src={urlForImage(technology?.image).url()}
+                                        alt={technology?.title || "Technology"}
                                         height={100}
                                         width={100}
                                     />
                                 ))}
                             </div>
                             <p className="text-sm md:text-md lg:text-lg text-justify dark:text-gray-300">
-                                {project.summary}
+                                {project?.summary}
                             </p>
                             <div className="flex gap-10 items-center justify-center dark:text-white">
                                 {project.liveLink && (
